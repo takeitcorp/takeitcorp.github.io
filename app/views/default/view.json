@@ -1,0 +1,11 @@
+{
+  "title": "CodeLabs for TAKE",
+  "description": "주식회사 테이크의 코드랩입니다.",
+  "tags": [],
+  "categories": [],
+  "exclude": ["^lang-.*"],
+  "logoUrl": "/default/logo.png",
+  "toolbarBgColor": "#37474F",
+  "sort": "mainCategory",
+  "pins": []
+}
