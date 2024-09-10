@@ -577,6 +577,7 @@ const generateView = () => {
 
       canonicalViewUrl: viewFuncs.canonicalViewUrl(),
       categoryClass: viewFuncs.categoryClass(),
+      tagClass: viewFuncs.tagClass(),
       categoryHasShowableCodelabs: viewFuncs.categoryHasShowableCodelabs(viewId),
       codePrettyDate: viewFuncs.codelabPrettyDate(),
       codelabPin: viewFuncs.codelabPin(),
@@ -599,6 +600,10 @@ const viewFuncs = {
   // categoryClass returns the top-level categoryClass function.
   categoryClass: () => {
     return categoryClass;
+  },
+  // tagClass returns the top-level tagClass function.
+  tagClass: () => {
+    return tagClass;
   },
 
   // canonicalViewUrl returns the canonical URL to the given view.
@@ -707,6 +712,11 @@ const categoryClass = (codelab, level) => {
     name += ' ' + codelab.category[level];
   }
   return name.toLowerCase().replace(/\s/g, '-');
+}
+
+// tagClass converts the codelab to its corresponding CSS class.
+const tagClass = (codelab) => {
+  return codelab.tags[0].toLowerCase().replace(/\s/g, '-');
 }
 
 // Filters out codelabs which do not match view spec. Currently, the matching is
