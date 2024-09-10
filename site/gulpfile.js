@@ -285,8 +285,8 @@ gulp.task('minify:js', () => {
 // minify minifies all minifiable things in dist
 gulp.task('minify', gulp.parallel(
   'minify:css',
-  'minify:html',
-  'minify:js',
+  //'minify:html',
+  //'minify:js',
 ));
 
 // dist packages the build for distribution, compressing and condensing where
