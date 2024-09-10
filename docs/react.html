@@ -1,0 +1,222 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="React">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="UXBooster for React">
+  <meta name="application-name" content="UXBooster for React">
+  <link rel="canonical" href="https://takeitcorp.github.io/react/" />
+
+  <title>UXBooster for React</title>
+
+  <link rel="stylesheet" href="/styles/main.css">
+
+  
+
+  <link rel="import" href="/elements/elements.html">
+
+  <style is="custom-style">
+    :root {
+      --paper-tabs-selection-bar-color: currentcolor;
+      --paper-input-container-underline: {
+        display: none;
+      };
+      --paper-input-container-underline-focus: {
+        display: none;
+      };
+    }
+
+    .dropdown-filter {
+      --paper-input-container: {
+        padding: 8px;
+      }
+    }
+  </style>
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#455a64">
+  <meta name="apple-mobile-web-app-title" content="UXBooster for React">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="194x194" href="/images/favicons/favicon-194x194.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#455a64">
+  <meta name="msapplication-TileColor" content="#455a64">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#455a64">
+
+  <meta name="og:type" property="og:type" content="website" />
+  <meta name="og:title" property="og:title" content="UXBooster for React" />
+  <meta name="og:description" property="og:description" content="React" />
+  <meta name="og:url" property="og:url" content="https://takeitcorp.github.io/react/" />
+  <meta name="og:site_name" property="og:site_name" content="Codelabs" />
+  <meta name="og:determiner" property="og:determiner" content="the" />
+  <meta name="og:locale" property="og:locale" content="en_US" />
+  <meta name="og:image" property="og:image" content="/images/og-image.png" />
+  <meta name="og:image:url" property="og:image:url" content="/images/og-image.png" />
+  <meta name="og:image:type" property="og:image:type" content="image/png" />
+  <meta name="og:image:width" property="og:image:width" content="1200" />
+  <meta name="og:image:height" property="og:image:height" content="1200" />
+  <meta name="og:image:alt" property="og:image:alt" content="Codelabs" />
+
+  <meta name="twitter:card" property="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" property="twitter:title" content="UXBooster for React" />
+  <meta name="twitter:description" property="twitter:description" content="React" />
+  <meta name="twitter:image" property="twitter:image" content="/images/og-image.png" />
+  <meta name="twitter:url" property="twitter:url" content="https://takeitcorp.github.io/react/" />
+</head>
+
+<body id="app" is="body-bind" class="loading fullbleed view">
+  <paper-header-panel id="main" mode="standard" main>
+    
+    <div id="mainToolbar" class="paper-header">
+      <div class="site-width layout horizontal">
+        <a href="/">
+          <img src="/default/logo.png" width="100" alt="Codelabs Logo" style="margin-right: 30px">
+        </a>
+        <div id="searchbar">
+          <paper-input-container no-label-float>
+            <paper-icon-button prefix icon="search"></paper-icon-button>
+            <label>Search</label>
+            <input is="iron-input" bind-value="{{searchVal}}" on-keydown="onSearchKeyDown">
+          </paper-input-container>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    <header id="banner" down>
+      <div class="site-width">
+          <div class="banner-description">
+            <!-- <img id="logo" src="/default/logo.png" alt="Event logo"> -->
+            <div class="banner-meta">
+              <h1>UXBooster for React</h1>
+              <!-- <p>React</p> -->
+            </div>
+          </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="filters" class="site-width layout horizontal center justified">
+        <div id="sortby">
+          <paper-tabs selected="0" noink on-iron-activate="sortBy">
+            <paper-tab>A-Z</paper-tab>
+            <paper-tab>Recent</paper-tab>
+            <paper-tab>Duration</paper-tab>
+          </paper-tabs>
+        </div>
+
+        
+        <paper-dropdown-menu
+          label="Choose an event"
+          class="dropdown-filter"
+          no-label-float
+          noink no-animations
+        >
+          <paper-listbox
+            id="eventList"
+            slot="dropdown-content"
+            class="dropdown-content"
+          ><a href="/nexacro/" tabindex="-1">
+                  <paper-item>UXBooster for Nexacro</paper-item>
+                </a>
+              <a href="/react/" tabindex="-1">
+                  <paper-item>UXBooster for React</paper-item>
+                </a>
+              
+          </paper-listbox>
+        </paper-dropdown-menu>
+        </div>
+
+      <card-sorter id="cards" class="site-width">
+        
+          
+            
+            <a href="/codelabs\react-very-first\index.html?index=..%2F..react" on-tap="navigate"
+               class="codelab-card category-uxbooster-react"
+               data-category="uxbooster-react"
+               data-title="Hello World React!!"
+               data-duration="1"
+               data-updated="2024-09-09T15:18:20+09:00"
+               data-tags="react,uxbooster-react"
+               data-pin="">
+              <div class="description">Hello World React!!</div>
+              <div class="card-duration">
+                <span>1 min </span>
+                <span>Updated Sep 9, 2024</span>
+              </div>
+              <div class="card-footer">
+                <div class="category-icon-container">
+                <div class="category-icon react-icon"></div>
+                <div class="category-icon uxbooster-react-icon"></div>
+                
+                </div>
+                <paper-button class="react-bg">Start</paper-button>
+              </div>
+            </a>
+          
+      </card-sorter>
+
+      <div id="loading-placeholder" class="site-width">
+        Loading Codelabs, please wait...
+      </div>
+    </main>
+
+    <!--footer id="footer">
+      <div class="footer-wrapper site-width">
+        <div class="link-list">
+          <label>Connect</label>
+          <ul>
+            <li><a href="https://www.example.com/">Example</a></li>
+          </ul>
+        </div>
+        <div class="link-list">
+          <label>Programs</label>
+          <ul>
+            <li><a href="https://www.example.com/">Example</a></li>
+          </ul>
+        </div>
+        <div class="link-list">
+          <label>Developer Consoles</label>
+          <ul>
+            <li><a href="https://www.example.com/">Example</a></li>
+          </ul>
+        </div>
+        <div class="link-list">
+          <label>Explore</label>
+           <ul>
+            <li><a href="https://www.example.com/">Example</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer-->
+
+    <div class="footerbar">
+      <div class="site-width layout horizontal center justified">
+        <span>
+          서울특별시 구로구 디지털로33길 11, 1201호(구로동, 에이스테크노타워8차)&nbsp; | &nbsp;대표이사 : 천우성&nbsp; | &nbsp;사업자등록번호 : 465-87-00853&nbsp; | &nbsp;대표번호 : 02-855-0801&nbsp; | &nbsp;Fax : 02-855-0802<br>
+          COPYRIGHTⓒ TAKE CORP. ALL RIGHTS RESERVED
+        </span>
+      </div>
+    </div>
+
+  </paper-header-panel>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
