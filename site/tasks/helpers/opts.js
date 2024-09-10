@@ -42,16 +42,9 @@ exports.htmlmin = () => {
 exports.postcss = () => {
   return [
     autoprefixer({
-      browsers: [
-        'ie >= 10',
-        'ie_mob >= 10',
-        'ff >= 30',
-        'chrome >= 34',
-        'safari >= 7',
-        'opera >= 23',
-        'ios >= 7.1',
-        'android >= 4.4',
-        'bb >= 10',
+      overrideBrowserslist: [
+        "defaults and fully supports es6-module",
+        "maintained node versions"
       ],
     }),
     cssdeclarationsorter({ order: 'alphabetically' }),
