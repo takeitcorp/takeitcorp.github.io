@@ -44,6 +44,52 @@ $color-tensorflow-orange: #ed8e24;
 $color-unity-grey: #222c37;
 $color-weave-green: #0f9d58;
 
+/* Others */
+$color-amqp-blue: #20329f;
+$color-boomi-blue: #043d58;
+$color-kafka-black: #000;
+$color-java-red: #dc403d;
+$color-jms-red: #dc403d;
+$color-mqtt-purple: #751b84;
+$color-rest-grey: #a2a7ab;
+$color-solace-green: #00c895;
+$color-spring-green: #6db33f;
+$color-k8s-blue: #2f6ce6;
+$color-js-yellow: #f5de19;
+$color-helm-blue: #277a9f;
+$color-azure-blue: #038ad7;
+$color-opentel-orange: #f7a71b;
+$color-mule-blue: #04a0de;
+$color-rabbit-orange: #f76302;
+$color-keda-blue: #326de6;
+$color-apama-blue: #0098CF;
+$color-hermesjms-yellow: #FEF200;
+$color-flink-pink: #E6516F;
+$color-nifi-blue: #6A8691;
+$color-nagios-black: black;
+$color-jboss-red: red;
+$color-weblogic-red: red;
+$color-websphere-purple: purple;
+$color-webspherelib-blue: #6A8691;
+$color-spark-orange: #E77215;
+$color-sap-blue: #00418D;
+$color-terraform-purple: #6043E9;
+
+$color-apache: #c4203d;
+$color-apple: #000000;
+$color-docker: #2396ed;
+$color-nginx: #019639;
+$color-tomcat: #ffdc76;
+$color-nexacro: #0fb4ea;
+$color-react: black;
+
+/* UXBooster */
+$color-uxbooster-nexacro: #0fb4ea;
+$color-uxbooster-react: black;
+
+
+
+
 /* Mixins */
 
 @mixin codelab-card($categories, $color, $icon) {
@@ -199,3 +245,33 @@ $color-weave-green, 'weave.svg');
 
 @include codelab-card(['web'],
   $color-google-blue, 'web.svg');
+
+
+
+
+
+
+
+
+
+@include codelab-card(['uxbooster-nexacro'], $color-uxbooster-nexacro, 'uxbooster-nexacro.png');
+@include codelab-card(['uxbooster-react'], $color-uxbooster-react, 'uxbooster-react.png');
+@include codelab-card(['nexacro'], $color-nexacro, 'nexacro.svg');
+@include codelab-card(['react'], $color-react, 'react.svg');
+
+@include codelab-card([ "java" ], $color-java-red, "java.svg");
+@include codelab-card([ "spring" ], $color-spring-green, "spring.svg");
+@include codelab-card([ "kubernetes" ], $color-k8s-blue, "k8s.svg");
+@include codelab-card([ "javascript" ], $color-js-yellow, "js.svg");
+@include codelab-card([ "sap" ], $color-sap-blue, "sap.png");
+
+@include codelab-card([ "apache" ], $color-apache, "apache.png");
+@include codelab-card([ "apple" ], $color-apple , "apple.png");
+@include codelab-card([ "docker" ], $color-docker, "docker.png");
+@include codelab-card([ "nginx" ], $color-nginx , "nginx.png");
+@include codelab-card([ "tomcat" ], $color-tomcat, "tomcat.png");
+
+
+
+
+

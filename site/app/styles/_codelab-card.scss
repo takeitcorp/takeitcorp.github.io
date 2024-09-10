@@ -99,6 +99,13 @@ $card-col-height: 200px; // column mode
     padding: 13px 25px;
   }
 
+  .category-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+  }
+
   .category-icon {
     width: 42px;
     height: 42px;
