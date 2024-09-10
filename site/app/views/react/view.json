@@ -1,0 +1,9 @@
+{
+  "title": "UXBooster for React",
+  "description": "React",
+  "tags": ["uxbooster-react", "react"],
+  "categories": ["uxbooster-react"],
+  "exclude": [],
+  "logoUrl": "/default/logo.png",
+  "sort": "mainCategory"
+}

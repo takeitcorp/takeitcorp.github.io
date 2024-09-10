@@ -1,0 +1,9 @@
+{
+  "title": "UXBooster for Nexacro",
+  "description": "넥사크로",
+  "tags": ["uxbooster-nexacro", "nexacro", "take.js"],
+  "categories": ["uxbooster-nexacro"],
+  "exclude": [],
+  "logoUrl": "/default/logo.png",
+  "sort": "mainCategory"
+}
