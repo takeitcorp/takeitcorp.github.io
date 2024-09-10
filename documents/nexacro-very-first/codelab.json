@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-09-09T15:17:13+09:00",
+  "id": "nexacro-very-first",
+  "duration": 1,
+  "title": "Hello World Nexacro!!",
+  "summary": "아주 처음 테스트",
+  "source": "nexacro-very-first.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "uxbooster-nexacro"
+  ],
+  "tags": [
+    "nexacro",
+    "uxbooster-nexacro"
+  ],
+  "feedback": "https://www.take-it.co.kr",
+  "url": "nexacro-very-first"
+}
