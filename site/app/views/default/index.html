@@ -9,7 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="description" content="{{view.description}}">
@@ -17,18 +17,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="generator" content="{{view.title}}">
   <meta name="application-name" content="{{view.title}}">
   <link rel="canonical" href="{{canonicalViewUrl(view)}}" />
-  <link rel="preconnect" href="https://www.google-analytics.com" />
-
-  <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', '{{ga}}', 'auto');
-    ga('send', 'pageview');
-    {% if view.ga %}
-    ga('create', '{{view.ga}}', 'auto', { name: 'view' });
-    ga('view.send', 'pageview');
-    {% endif %}
-  </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
 
   <title>{{view.title}}</title>
 
@@ -58,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#455a64">
   <meta name="apple-mobile-web-app-title" content="{{view.title}}">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
@@ -99,7 +87,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div id="mainToolbar" class="paper-header">
       <div class="site-width layout horizontal">
         <a href="/">
-          <img src="/images/logo.png" class="logo-devs" alt="Codelabs Logo">
+          <img src="/default/logo.png" width="100" alt="Codelabs Logo" style="margin-right: 30px">
         </a>
         <div id="searchbar">
           <paper-input-container no-label-float>
@@ -115,28 +103,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     {# Event pages force down attribute. On homepage, it's applied dynamically. #}
     <header id="banner" {% if view.id != 'default' -%}down{%- else %}down$="[[_toBoolean(selectedFilter)]]"{%- endif %}>
       <div class="site-width">
-        {% if view.id == 'default' %}
-        <h2 class="banner-title">Welcome to Codelabs!</h2>
-        <div class="banner-description"
-             data-filter-selected$="{% raw %}[[_toBoolean(selectedFilter)]]{% endraw %}">
-          <p class="banner-info">
-            Codelabs provide a guided, tutorial, hands-on
-            coding experience. Most codelabs will step you through the process
-            of building a small application, or adding a new feature to an
-            existing application.
-            <br>
-            <a href="https://github.com/googlecodelabs/tools">Codelab tools on GitHub</a>
-          </p>
-        {%- else -%}
           <div class="banner-description">
-            <img id="logo" src="{{view.logoUrl}}" alt="Event logo">
+            <!-- <img id="logo" src="{{view.logoUrl}}" alt="Event logo"> -->
             <div class="banner-meta">
-              <h3>{{view.title}}</h3>
+              <h1>{{view.title}}</h1>
               {% if view.description -%}
-                <p>{{view.description}}</p>
+                <!-- <p>{{view.description}}</p> -->
               {%- endif %}
             </div>
-        {%- endif %}
           </div>
       </div>
     </header>
@@ -151,7 +125,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </paper-tabs>
         </div>
 
-        {% if view.id == 'default' && views|length > 1 %}
+        {% if views|length > 1 %}
         <paper-dropdown-menu
           label="Choose an event"
           class="dropdown-filter"
@@ -235,7 +209,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
     </main>
 
-    <footer id="footer">
+    <!--footer id="footer">
       <div class="footer-wrapper site-width">
         <div class="link-list">
           <label>Connect</label>
@@ -262,14 +236,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </ul>
         </div>
       </div>
-    </footer>
+    </footer-->
 
     <div class="footerbar">
       <div class="site-width layout horizontal center justified">
         <span>
-          <a href="https://example.com">Terms</a>
-          &nbsp; | &nbsp;
-          <a href="https://example.com">Privacy</a>
+          서울특별시 구로구 디지털로33길 11, 1201호(구로동, 에이스테크노타워8차)&nbsp; | &nbsp;대표이사 : 천우성&nbsp; | &nbsp;사업자등록번호 : 465-87-00853&nbsp; | &nbsp;대표번호 : 02-855-0801&nbsp; | &nbsp;Fax : 02-855-0802<br>
+          COPYRIGHTⓒ TAKE CORP. ALL RIGHTS RESERVED
         </span>
       </div>
     </div>
