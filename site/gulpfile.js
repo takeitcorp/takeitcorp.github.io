@@ -664,13 +664,13 @@ const viewFuncs = {
   // page.
   codelabPrettyDate: () => {
     return (ts) => {
-      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const monthNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
       const d = new Date(ts);
       const month = monthNames[d.getMonth()];
       const date = d.getUTCDate();
       const year = d.getFullYear();
 
-      return `${month} ${date}, ${year}`;
+      return `${year}년 ${month}월 ${date}일`;
     }
   },
 
