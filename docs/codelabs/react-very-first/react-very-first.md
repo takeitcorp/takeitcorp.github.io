@@ -1,10 +1,10 @@
-author: glorial
+authors: glorial
 summary: 아주 처음 테스트
 id: react-very-first
 categories: uxbooster-react
 tags: uxbooster-react, react
 status: Published
-feedback link: https://www.take-it.co.kr
+feedback link: https://github.com/takeitcorp/takeitcorp.github.io/issues
 
 # Hello World React!!
 ## Overview
