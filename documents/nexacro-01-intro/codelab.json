@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-09-13T14:42:19+09:00",
-  "id": "nexacro-very-first",
-  "duration": 1,
-  "title": "Hello World Nexacro!!",
+  "updated": "2024-09-13T14:42:17+09:00",
+  "id": "nexacro-01-intro",
+  "duration": 2,
+  "title": "UXBooster 소개",
   "authors": "glorial",
-  "summary": "아주 처음 테스트",
-  "source": "nexacro-very-first.md",
+  "summary": "UXBooster 소개",
+  "source": "nexacro-01-intro.md",
   "theme": "",
   "status": [
     "published"
@@ -22,5 +22,5 @@
     "uxbooster-nexacro"
   ],
   "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
-  "url": "nexacro-very-first"
+  "url": "nexacro-01-intro"
 }
