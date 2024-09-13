@@ -26,6 +26,30 @@ google-codelab {
     'metadata  main';
 }
 
+:link,:visited {
+    color: #0b57d0;
+    outline: 0;
+    -webkit-text-decoration: none;
+    -moz-text-decoration: none;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+a:hover {
+    -webkit-text-decoration: none;
+    -moz-text-decoration: none;
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: underline;
+}
+
+a:focus img {
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%)
+}
+
 // stylelint-disable selector-max-id
 
 google-codelab #main {
@@ -74,7 +98,7 @@ google-codelab #codelab-title h1 a {
 google-codelab #codelab-title h1 a:focus,
 google-codelab #codelab-title h1 a:hover {
   color: #212121;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 google-codelab #codelab-title .time-remaining {
@@ -187,6 +211,10 @@ google-codelab .metadata a {
 google-codelab .metadata a:hover,
 google-codelab .metadata a:focus {
   color: #212121;
+}
+
+google-codelab .metadata .material-icons {
+  vertical-align: bottom;
 }
 
 @media (max-width: 768px) {
