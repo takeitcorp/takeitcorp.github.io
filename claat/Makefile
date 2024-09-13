@@ -12,9 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SHA     := $(shell git rev-parse --short HEAD)
-DATE    := $(shell TZ=UTC date +%FT%T)Z
-VERSION := $(shell cat VERSION)-$(DATE)-$(SHA)
+VERSION := $(shell cat VERSION)
 
 OUTDIRNAME := bin
 OUTDIR := ./$(OUTDIRNAME)
