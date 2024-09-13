@@ -1,5 +1,5 @@
 @echo off
-rmdir /s /q documents
+rmdir /s /q docs
 cd documents
 call buildall
 cd ..
