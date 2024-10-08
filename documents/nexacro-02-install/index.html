@@ -1,0 +1,214 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>2. UXBooster 개발도구 설치</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <link rel="stylesheet" href="/elements/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="nexacro-02-install"
+                  title="2. UXBooster 개발도구 설치"
+                  environment="web"
+                  feedback-link="https://github.com/takeitcorp/takeitcorp.github.io/issues">
+    
+      <google-codelab-step label="UXBooster 개발도구 설치" duration="5">
+        
+          <google-codelab-about codelab-title="2. UXBooster 개발도구 설치" authors="glorial" ></google-codelab-about>
+        
+        <h2 is-upgraded><strong>UXBooster.exe 실행</strong></h2>
+<p class="image-container"><img alt="그림 1" src="img\\e85a8b1d47f35cb3.png"></p>
+<h2 is-upgraded><strong>C:\UXBooster에 설치합니다</strong></h2>
+<p class="image-container"><img alt="그림2" src="img\\594fb6c5e4001cdb.png"></p>
+<h2 is-upgraded><strong>설치가 완료 되면 바탕화면에 바로가기가 생성됩니다</strong></h2>
+<p class="image-container"><img alt="그림 3" src="img\\2839733a9368b7a2.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Eclipse" duration="1">
+        
+        <h2 is-upgraded><strong>C:\UXBooster\eclipse\eclipse.exe 를 더블클릭</strong></h2>
+<p class="image-container"><img alt="그림 4" src="img\\20c33743e1979bf5.png"></p>
+<h2 is-upgraded><strong>C:\UXBooster\workspace 선택</strong></h2>
+<p class="image-container"><img alt="그림 5" src="img\\f1ce478eafd56cfd.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="(선택)SVN" duration="5">
+        
+        <aside class="warning"><p>(선택) SVN으로 소스를 가져올 경우</p>
+</aside>
+<h2 is-upgraded><strong>Windows - Show View - Other 선택</strong></h2>
+<p class="image-container"><img alt="그림 6" src="img\\3b1b3b7076041242.png"></p>
+<h2 is-upgraded><strong>SVN - SVN Repositores 선택</strong></h2>
+<p class="image-container"><img alt="그림 7" src="img\\b328a26869581ace.png"></p>
+<h2 is-upgraded><strong>New - Repository location</strong></h2>
+<p class="image-container"><img alt="그림 8" src="img\\135a2162c1e5d219.png"></p>
+<h2 is-upgraded><strong>SVN 접속 정보 입력</strong></h2>
+<p class="image-container"><img alt="그림 9" src="img\\95f04f1505ba42a0.png"></p>
+<p><strong>접속정보</strong></p>
+<ul>
+<li>URL : 지정된 SVN URL정보(회사별 별도 지정)</li>
+<li>User : 지정된 SVN ID값 (개발자별 별도 지정)</li>
+<li>Password : 지정된 SVN 패스워드 값 (개발자별 별도 지정</li>
+</ul>
+<h2 is-upgraded>Check Out</h2>
+<p class="image-container"><img alt="그림 10" src="img\\7cd8ef6803b6e6d4.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Maven" duration="1">
+        
+        <h2 is-upgraded><strong>프로젝트 우클릭 - Maven - Update Project</strong></h2>
+<p class="image-container"><img alt="그림 11" src="img\\9b161e4b46717843.png"></p>
+<h2 is-upgraded><strong>Update Maven Project 실행</strong></h2>
+<p>Force Update of Snapshots/Releases 체크</p>
+<p class="image-container"><img alt="그림 12" src="img\\fa5711581705c80f.png"></p>
+<aside class="warning"><p>Maven 오류 발생 시</p>
+<ol type="1">
+<li><code>Eclipse</code> 종료</li>
+<li><code>%UserProfile%\.m2\repository</code> 하위폴더 삭제</li>
+<li><code>Eclipse</code> 시작 후 <code>Update Project</code> 실행</li>
+</ol>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="(선택)Tomcat 추가" duration="5">
+        
+        <aside class="warning"><p>(선택) SVN으로 소스를 가져온 경우</p>
+</aside>
+<h2 is-upgraded><strong>‘No servers are...‘를 클릭</strong></h2>
+<p class="image-container"><img alt="그림 13" src="img\\78f2e8ecff87dda5.png"></p>
+<h2 is-upgraded><strong>Apache - Tomcat v9.0 Server를 선택</strong></h2>
+<p class="image-container"><img alt="그림 14" src="img\\4a3057961335c60d.png"></p>
+<h2 is-upgraded><strong>Tomcat 설치경로 선택</strong></h2>
+<p><code>Tomcat Installation directory</code>를 <code>C:\UXBooster\tools\apache-tomcat-9.0.65</code>로 지정 후 Next</p>
+<p class="image-container"><img alt="그림 15" src="img\\67674bacaaacf927.png"></p>
+<h2 is-upgraded><strong>Application 추가</strong></h2>
+<p>Available에 있는 <code>uxbooster-sample</code>을 선택 후 Add - Finish</p>
+<p class="image-container"><img alt="그림 16" src="img\\3d1cefabb97f2113.png"></p>
+<h2 is-upgraded><strong>Tomcat 설정</strong></h2>
+<p>Tomcat Server를 더블클릭</p>
+<p class="image-container"><img alt="그림 17" src="img\\45636f9cae9afe3e.png"></p>
+<h2 is-upgraded><strong>Server Option 설정</strong></h2>
+<p><code>Serve modules without publishing</code> 체크 후 저장</p>
+<p class="image-container"><img alt="그림 18" src="img\\5c64589e903b7869.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Tomcat 실행" duration="1">
+        
+        <h2 is-upgraded><strong>Servers - Tomcat - Start</strong></h2>
+<p class="image-container"><img alt="그림 19" src="img\\ae9158b468625cb7.png"></p>
+<h2 is-upgraded><strong>Windows - Show View - Console 출력 결과</strong></h2>
+<p class="image-container"><img alt="그림 20" src="img\\2f225ad22338e916.png"></p>
+<h2 is-upgraded><strong>브라우저 실행 결과</strong></h2>
+<p><a href="http://localhost:8080/UXBooster" target="_blank">http://localhost:8080/UXBooster</a></p>
+<p class="image-container"><img alt="그림 21" src="img\\4273638aa28f3149.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Nexacro Studio 설치" duration="2">
+        
+        <h2 is-upgraded><strong>C:\UXBooster\tools\NexacroN_SetupStudio.exe 실행</strong></h2>
+<p class="image-container"><img alt="studio1" src="img\\f0da762c01f87ef8.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Nexacro Project" duration="1">
+        
+        <h2 is-upgraded><strong>Open - Project</strong></h2>
+<p class="image-container"><img alt="studio2" src="img\\d81a9103c1eadb70.png"></p>
+<h2 is-upgraded><strong>Project 선택</strong></h2>
+<p><code>C:\UXBooster\workspace\uxbooster-sample\nexacro\UXBoosterN.xprj</code></p>
+<p class="image-container"><img alt="studio3" src="img\\fadea060fc6d1cb2.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Code Snippet 추가" duration="2">
+        
+        <h2 is-upgraded><strong>Assist - Code Snippet 클릭</strong></h2>
+<p class="image-container"><img alt="studio4" src="img\\8e04dbde1401837.png"></p>
+<h2 is-upgraded><strong>Options 클릭</strong></h2>
+<p class="image-container"><img alt="studio5" src="img\\f461ee5e9d1c319c.png"></p>
+<h2 is-upgraded><strong>UXBooster.xsnippet 선택</strong></h2>
+<p><code>C:\UXBooster\workspace\uxbooster-sample\nexacro\UXBooster.xsnippet</code></p>
+<p class="image-container"><img alt="studio6" src="img\\c671dfb6af35dbe6.png"></p>
+<h2 is-upgraded><strong>추가된 take 함수 확인</strong></h2>
+<p class="image-container"><img alt="studio7" src="img\\2fac8f0d68a888d1.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SDK, Generate 경로 지정" duration="2">
+        
+        <h2 is-upgraded><strong>Tools - Options 클릭</strong></h2>
+<p class="image-container"><img alt="sdk1" src="img\\1e28523ac098dd83.png"></p>
+<h2 is-upgraded><strong>Project - General - Base Library Path 경로 지정</strong></h2>
+<p><code>C:\UXBooster\workspace\uxbooster-sample\nexacro\nexacrolib</code></p>
+<p class="image-container"><img alt="sdk2" src="img\\49af89b323c32a23.png"></p>
+<h2 is-upgraded><strong>Project - Generate 경로 지정</strong></h2>
+<p><code>C:\UXBooster\workspace\uxbooster-sample\src\main\webapp</code></p>
+<p class="image-container"><img alt="generate1" src="img\\9f95cd7a144ca1e8.png"></p>
+<h2 is-upgraded><strong>Generate - Regenerate - Application 실행</strong></h2>
+<p class="image-container"><img alt="generate2" src="img\\e143dd41a1992125.png"></p>
+<aside class="special"><p>Generate : 기존에 빌드 된 파일은 제외<br> Regenerate : 모든 파일을 다시 빌드<br><a href="https://docs.tobesoft.com/development_tools_guide_nexacro_n_v24_ko/0067966aeb0e944f#1dde595d080ae247" target="_blank">관련문서</a></p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="UXBooster 실행" duration="3">
+        
+        <h2 is-upgraded><strong>Eclipse Tomcat 실행</strong></h2>
+<p>Servers - Tomcat - Start</p>
+<p class="image-container"><img alt="start1" src="img\\34bed2bcda43e4cb.png"></p>
+<h2 is-upgraded><strong>(선택) Nexacro Studio Browser 선택</strong></h2>
+<p>Chrome, Edge 중 선택</p>
+<p class="image-container"><img alt="start2" src="img\\e1cfffc2726ec34c.png"></p>
+<h2 is-upgraded><strong>(선택) Generate - Launch - Web Server 실행</strong></h2>
+<p><code>Web Server</code> : http://localhost:8080/UXBooster/</p>
+<p class="image-container"><img alt="start3" src="img\\74410c0327f0abbc.png"></p>
+<h2 is-upgraded><strong>브라우저 실행결과</strong></h2>
+<p><a href="http://localhost:8080/UXBooster/" target="_blank">http://localhost:8080/UXBooster/</a></p>
+<p class="image-container"><img alt="run" src="img\\74bcd1ff92539144.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="/elements/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

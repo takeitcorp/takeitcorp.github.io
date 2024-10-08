@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-10-08T16:19:51+09:00",
-  "id": "nexacro-01-intro",
-  "duration": 7,
-  "title": "1. UXBooster 소개",
+  "updated": "2024-10-08T17:30:46+09:00",
+  "id": "nexacro-02-install",
+  "duration": 28,
+  "title": "2. UXBooster 개발도구 설치",
   "authors": "glorial",
-  "summary": "1. UXBooster 소개",
-  "source": "nexacro-01-intro.md",
+  "summary": "2. UXBooster 개발도구 설치",
+  "source": "nexacro-02-install.md",
   "theme": "",
   "status": [
     "published"
@@ -22,5 +22,5 @@
     "uxbooster-nexacro"
   ],
   "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
-  "url": "nexacro-01-intro"
+  "url": "nexacro-02-install"
 }
