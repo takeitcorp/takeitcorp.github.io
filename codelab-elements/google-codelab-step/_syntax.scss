@@ -41,17 +41,41 @@ pre > code {
 code em {
   color: #97C8F2;
 }
-pre .str, code .str { color: #34A853; } /* string  - green */
-pre .kwd, code .kwd { color: #F538A0; } /* keyword - dark pink */
-pre .com, code .com { color: #BDC1C6; } /* comment - gray */
-pre .typ, code .typ { color: #24C1E0; } /* type - light blue */
-pre .lit, code .lit { color: #4285F4; } /* literal - blue */
-pre .pun, code .pun { color: #F8F9FA; } /* punctuation - white */
-pre .pln, code .pln { color: #F8F9FA; } /* plaintext - white */
-pre .tag, code .tag { color: #24C1E0; } /* html/xml tag    - light blue */
-pre .atn, code .atn { color: #EDA912; } /* html/xml attribute name  - khaki */
-pre .atv, code .atv { color: #34A853; } /* html/xml attribute value - green */
-pre .dec, code .dec { color: #5195EA; } /* decimal - blue */
+// pre .str, code .str { color: #34A853; } /* string  - green */
+// pre .kwd, code .kwd { color: #F538A0; } /* keyword - dark pink */
+// pre .com, code .com { color: #BDC1C6; } /* comment - gray */
+// pre .typ, code .typ { color: #24C1E0; } /* type - light blue */
+// pre .lit, code .lit { color: #4285F4; } /* literal - blue */
+// pre .pun, code .pun { color: #F8F9FA; } /* punctuation - white */
+// pre .pln, code .pln { color: #F8F9FA; } /* plaintext - white */
+// pre .tag, code .tag { color: #24C1E0; } /* html/xml tag    - light blue */
+// pre .atn, code .atn { color: #EDA912; } /* html/xml attribute name  - khaki */
+// pre .atv, code .atv { color: #34A853; } /* html/xml attribute value - green */
+// pre .dec, code .dec { color: #5195EA; } /* decimal - blue */
+
+// pre .str, code .str { color: #9ccc65 } /* string  - green */
+// pre .kwd, code .kwd { color: #78d9ec } /* keyword - dark pink */
+// pre .com, code .com { color: #ff8bcb } /* comment - gray */
+// pre .typ, code .typ { color: #d7aefb } /* type - light blue */
+// pre .lit, code .lit { color: #fbbc04 } /* literal - blue */
+// pre .pun, code .pun { color: #669df6 } /* punctuation - white */
+// pre .pln, code .pln { color: #669df6 } /* plaintext - white */
+// pre .tag, code .tag { color: #78d9ec } /* html/xml tag    - light blue */
+// pre .atn, code .atn { color: #d7aefb } /* html/xml attribute name  - khaki */
+// pre .atv, code .atv { color: #9ccc65 } /* html/xml attribute value - green */
+// pre .dec, code .dec { color: #fbbc04 } /* decimal - blue */
+
+pre .str, code .str { color: #9ccc65 } /* string  - green */
+pre .kwd, code .kwd { color: #78d9ec } /* keyword - dark pink */
+pre .com, code .com { color: #bdc1c6 } /* comment - gray */
+pre .typ, code .typ { color: #d7aefb } /* type - light blue */
+pre .lit, code .lit { color: #fbbc04 } /* literal - blue */
+pre .pun, code .pun { color: #f8f9fa } /* punctuation - white */
+pre .pln, code .pln { color: #f8f9fa } /* plaintext - white */
+pre .tag, code .tag { color: #78d9ec } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: #eda912 } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: #9ccc65 } /* html/xml attribute value - green */
+pre .dec, code .dec { color: #5195ea } /* decimal - blue */
 
 paper-button {
   display: inline-flex;
