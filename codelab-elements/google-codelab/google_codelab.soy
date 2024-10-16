@@ -104,28 +104,9 @@
   <div class="time-remaining"
        tabindex="0"
        role="timer"
-       title=
-           "{if $time == 1}
-             {msg desc="Tooltip indicating expected time remaining (1 minute) for user to complete
-                 codelab."}
-               Estimated time remaining: {$time} minute
-             {/msg}
-           {else}
-             {msg desc="Tooltip indicating expected time remaining in minutes for user to complete
-                 codelab."}
-               Estimated time remaining: {$time} minutes
-             {/msg}
-           {/if}">
+       title="남은 예상 시간: {$time}분">
     <i class="material-icons">access_time</i>
-    {if $time == 1}
-      {msg desc="Label indicating expected time remaining (1 minute) for user to complete codelab."}
-        {$time} min remaining
-      {/msg}
-    {else}
-      {msg desc="Label indicating expected time remaining in minutes for user to complete codelab."}
-        {$time} mins remaining
-      {/msg}
-    {/if}
+    {$time}분 남음
   </div>
 {/template}
 
