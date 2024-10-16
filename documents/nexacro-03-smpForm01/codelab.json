@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-10-16T16:45:20+09:00",
+  "id": "nexacro-03-smpForm01",
+  "duration": 126,
+  "title": "3. 화면 유형별 샘플 01",
+  "authors": "glorial",
+  "summary": "3. 화면 유형별 샘플 01",
+  "source": "nexacro-03-smpForm01.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "uxbooster-nexacro"
+  ],
+  "tags": [
+    "nexacro",
+    "uxbooster-nexacro"
+  ],
+  "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
+  "url": "nexacro-03-smpForm01"
+}

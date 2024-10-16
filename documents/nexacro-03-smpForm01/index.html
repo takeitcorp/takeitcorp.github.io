@@ -1,0 +1,1527 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>3. 화면 유형별 샘플 01</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <link rel="stylesheet" href="/elements/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="nexacro-03-smpForm01"
+                  title="3. 화면 유형별 샘플 01"
+                  environment="web"
+                  feedback-link="https://github.com/takeitcorp/takeitcorp.github.io/issues">
+    
+      <google-codelab-step label="개요" duration="3">
+        
+          <google-codelab-about codelab-title="3. 화면 유형별 샘플 01" authors="glorial" ></google-codelab-about>
+        
+        <aside class="warning"><p><strong>사용자 목록 조회</strong></p>
+<p><strong>검색조건</strong>에 맞는 <strong>데이터</strong> (샘플01)을 조회하여 Grid 출력<br> 데이터의 <strong>코드</strong> (부서코드, 사용자상태코드, 사용여부코드)를 <strong>명칭</strong>으로 가공</p>
+</aside>
+<h2 is-upgraded><strong>화면 유형</strong></h2>
+<p>크게 두 영역으로 분리됩니다</p>
+<ul>
+<li><strong>검색 영역</strong> : 부서코드, 사용자ID, 사용여부</li>
+<li><strong>메인 영역</strong> : 타이틀, Grid</li>
+</ul>
+<p class="image-container"><img alt="form1" src="img\\a7e11f63c6010906.png"></p>
+<h2 is-upgraded><strong>UXBooster 활용 기능</strong></h2>
+<ul>
+<li><strong>take.FormTemp</strong> : 기초 코드 자동완성</li>
+<li><strong>take.tranSelect</strong> : 데이터 조회</li>
+<li><strong>takeval.check</strong> : 유효성 검증</li>
+<li><strong>take.tranCode</strong> : 공통코드 조회</li>
+<li><strong>takegrid</strong> : Grid 공통 기능</li>
+<li><strong>take debug window</strong> : 디버깅 화면</li>
+</ul>
+<h2 is-upgraded><strong>관련 데이터</strong></h2>
+<ul>
+<li><strong>공통코드</strong> : <code>00009</code> 사용여부, <code>00017</code> 사용자상태</li>
+<li><strong>테이블</strong><ul>
+<li><strong>TB_SMP01</strong> : 샘플01<table>
+<tr><td colspan="1" rowspan="1"><p>TB_SMP01</p>
+</td><td colspan="5" rowspan="1"><p>샘플01</p>
+</td><td colspan="4" rowspan="1"></td><td colspan="3" rowspan="1"></td><td colspan="2" rowspan="1"></td><td colspan="1" rowspan="1"></td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_CD</p>
+</td><td colspan="1" rowspan="1"><p>사용자코드</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_ID</p>
+</td><td colspan="1" rowspan="1"><p>사용자ID</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>18</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_NM</p>
+</td><td colspan="1" rowspan="1"><p>사용자명</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>30</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_ENG_NM</p>
+</td><td colspan="1" rowspan="1"><p>사용자영문명</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>50</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_PW</p>
+</td><td colspan="1" rowspan="1"><p>비밀번호</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>18</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_IMG</p>
+</td><td colspan="1" rowspan="1"><p>사용자이미지</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_BIRTHDAY</p>
+</td><td colspan="1" rowspan="1"><p>사용자생년월일</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>8</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>LUNAR_CD</p>
+</td><td colspan="1" rowspan="1"><p>양력음력구분</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>5</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_EMAIL</p>
+</td><td colspan="1" rowspan="1"><p>사용자이메일</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>100</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_MOBILE</p>
+</td><td colspan="1" rowspan="1"><p>사용자휴대폰번호</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>30</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_TEL</p>
+</td><td colspan="1" rowspan="1"><p>사용자전화번호</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>30</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_FAX</p>
+</td><td colspan="1" rowspan="1"><p>사용자FAX</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>30</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>POST_CD</p>
+</td><td colspan="1" rowspan="1"><p>우편번호</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_ADDR1</p>
+</td><td colspan="1" rowspan="1"><p>사용자 주소1</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>150</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_ADDR2</p>
+</td><td colspan="1" rowspan="1"><p>사용자 주소2</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>50</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DEPT_CD</p>
+</td><td colspan="1" rowspan="1"><p>부서코드</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_POSITION</p>
+</td><td colspan="1" rowspan="1"><p>사용자직위</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>5</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_GRADE</p>
+</td><td colspan="1" rowspan="1"><p>사용자등급</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>5</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USER_STATUS</p>
+</td><td colspan="1" rowspan="1"><p>사용자상태</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>5</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DESC_TXT</p>
+</td><td colspan="1" rowspan="1"><p>상세설명</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>2000</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USE_YN</p>
+</td><td colspan="1" rowspan="1"><p>사용여부</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>1</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>AGREE_YN</p>
+</td><td colspan="1" rowspan="1"><p>동의여부</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>1</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>AGREE_DT</p>
+</td><td colspan="1" rowspan="1"><p>동의일시</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>DATE</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>LOGIN_FAIL_CNT</p>
+</td><td colspan="1" rowspan="1"><p>로그인실패횟수</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>2</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>LAST_LOGIN_DT</p>
+</td><td colspan="1" rowspan="1"><p>최종로그인일시</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>DATE</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>PW_CHANGE_DT</p>
+</td><td colspan="1" rowspan="1"><p>비밀번호변경일시</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>DATE</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>INIT_YN</p>
+</td><td colspan="1" rowspan="1"><p>초기화여부</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>1</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>LOGIN_DEVICE</p>
+</td><td colspan="1" rowspan="1"><p>접속기기</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>50</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>LOGIN_BROWSER</p>
+</td><td colspan="1" rowspan="1"><p>접속환경</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>50</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>LOGIN_IP</p>
+</td><td colspan="1" rowspan="1"><p>접속IP</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>25</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>JOIN_DATE</p>
+</td><td colspan="1" rowspan="1"><p>입사일</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>8</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>MAIN_PROJECT</p>
+</td><td colspan="1" rowspan="1"><p>메인프로젝트</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>VALID_YN</p>
+</td><td colspan="1" rowspan="1"><p>유효여부</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>1</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>VALID_START_DATE</p>
+</td><td colspan="1" rowspan="1"><p>유효시작일자</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>8</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>VALID_END_DATE</p>
+</td><td colspan="1" rowspan="1"><p>유효종료일자</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>8</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>REG_DT</p>
+</td><td colspan="1" rowspan="1"><p>등록일시</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>DATE</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>REG_CD</p>
+</td><td colspan="1" rowspan="1"><p>등록자코드</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>MOD_DT</p>
+</td><td colspan="1" rowspan="1"><p>수정일시</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>DATE</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>MOD_CD</p>
+</td><td colspan="1" rowspan="1"><p>수정자코드</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+</table>
+</li>
+<li><strong>TB_SMP02</strong> : 샘플02<table>
+<tr><td colspan="1" rowspan="1"><p>TB_SMP02</p>
+</td><td colspan="5" rowspan="1"><p>샘플02</p>
+</td><td colspan="4" rowspan="1"></td><td colspan="3" rowspan="1"></td><td colspan="2" rowspan="1"></td><td colspan="1" rowspan="1"></td></tr>
+<tr><td colspan="1" rowspan="1"><p>DEPT_CD</p>
+</td><td colspan="1" rowspan="1"><p>부서코드</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>5</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DEPT_NM</p>
+</td><td colspan="1" rowspan="1"><p>부서명</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>50</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DEPT_ENG_NM</p>
+</td><td colspan="1" rowspan="1"><p>부서영문명</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>50</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>ML_CD</p>
+</td><td colspan="1" rowspan="1"><p>다국어코드</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>PARENT_DEPT</p>
+</td><td colspan="1" rowspan="1"><p>상위부서</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>5</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DEPT_LEVEL</p>
+</td><td colspan="1" rowspan="1"><p>부서LEVEL</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>2</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DEPT_ORDER</p>
+</td><td colspan="1" rowspan="1"><p>부서정렬순서</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>50</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DESC_TXT</p>
+</td><td colspan="1" rowspan="1"><p>상세설명</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>500</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USE_YN</p>
+</td><td colspan="1" rowspan="1"><p>사용여부</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>1</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>REG_DT</p>
+</td><td colspan="1" rowspan="1"><p>등록일시</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>DATE</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>REG_CD</p>
+</td><td colspan="1" rowspan="1"><p>등록자코드</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>MOD_DT</p>
+</td><td colspan="1" rowspan="1"><p>수정일시</p>
+</td><td colspan="1" rowspan="1"><p>Y</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>DATE</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>MOD_CD</p>
+</td><td colspan="1" rowspan="1"><p>수정자코드</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>N</p>
+</td><td colspan="1" rowspan="1"><p>VARCHAR2</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+<h2 is-upgraded><strong>개발결과물</strong></h2>
+<ul>
+<li><strong>Mapper</strong> : src/main/resources/mappers/sample/Sample01Mapper.xml</li>
+<li><strong>Nexacro</strong> : nexacro/guide/form/smpForm01.xfdl</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Nexacro Form 생성" duration="3">
+        
+        <h2 is-upgraded>Folder 생성</h2>
+<p class="image-container"><img alt="form1" src="img\\a9983fa4a3bb74a2.png"></p>
+<h2 is-upgraded>Folder Name 입력</h2>
+<ul>
+<li><strong>name</strong> : <code>form</code></li>
+</ul>
+<p class="image-container"><img alt="form2" src="img\\49a346f4e8190fe6.png"></p>
+<h2 is-upgraded>Form 생성</h2>
+<p class="image-container"><img alt="form3" src="img\\3b889fd24247eaf1.png"></p>
+<h2 is-upgraded>Form Name 입력</h2>
+<ul>
+<li><strong>Name</strong> : <code>smpForm01</code></li>
+</ul>
+<p class="image-container"><img alt="form4" src="img\\1fc43ebd8034512d.png"></p>
+<h2 is-upgraded>Form Size 입력</h2>
+<ul>
+<li><strong>Width</strong> : <code>1659</code> px</li>
+<li><strong>Height</strong> : <code>832</code> px</li>
+</ul>
+<p class="image-container"><img alt="form5" src="img\\9aa4da0476b3186c.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="기초 코드 자동완성" duration="3">
+        
+        <h2 is-upgraded><strong>take.FormTemp</strong></h2>
+<p><a href="../nexacro-02-install/index.html?index=..%2F..index#8" target="_blank">Code Snippet</a> 기능을 활용해 기초 코드를 빠르게 완성할 수 있습니다.</p>
+<p class="image-container"><img alt="formtemp1" src="img\\adf405ac94924a6.png"></p>
+<h2 is-upgraded><strong>take.FormTemp 결과</strong></h2>
+<p>영역별로 구분된 기초 코드가 완성되었습니다.</p>
+<p class="image-container"><img alt="formtemp2" src="img\\ee8dfc9b4cf2a9be.png"></p>
+<h2 is-upgraded><strong>Form onload Event</strong></h2>
+<p><code>Form_onload</code>함수를 <code>onload</code> Event에 할당합니다.</p>
+<p class="image-container"><img alt="formtemp3" src="img\\209d0765ebc2e5c0.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="공통코드(00009) 조회" duration="15">
+        
+        <h2 is-upgraded><strong>Dataset 추가</strong></h2>
+<p>공통코드(00009)를 위한 <code>dsCboUseYn</code>을 추가합니다.</p>
+<p class="image-container"><img alt="dataset1" src="img\\23e2b2305d43fd81.gif"></p>
+<h2 is-upgraded><strong>Dataset Column 추가</strong></h2>
+<ul>
+<li><strong>code</strong> : <code>코드ID</code></li>
+<li><strong>name</strong> : <code>코드명</code></li>
+<li><strong>ref1</strong> : <code>기타1</code></li>
+<li><strong>ref2</strong> : <code>기타2</code></li>
+<li><strong>ref3</strong> : <code>기타3</code></li>
+</ul>
+<p class="image-container"><img alt="dataset2" src="img\\e4028f6798ce0b50.png"></p>
+<h2 is-upgraded><strong>Form_onload 함수 수정</strong></h2>
+<p><code>fnInit</code> 함수를 호출합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 1.2 FORM EVENT 영역(onload등)
+ ********************************************************/
+/**
+ * Form_onload 최초 로드시 발생되는 이벤트 (필수)
+ */
+this.Form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+  if (take.formOnLoad(this))
+  {    
+    //초기화
+    this.fnInit();
+  }
+};
+</code></pre>
+<h2 is-upgraded><strong>fnInit 함수 수정</strong></h2>
+<p><code>fnInit</code> 함수는 form이 <code>onload</code>되거나 MDI탭에 의해 <code>활성화</code> 될 경우 실행됩니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 4 사용자 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnInit : 초기화 함수 검색조건 초기화 
+ * @return {N/A}    N/A
+ * @example this.fnInit();
+ */
+this.fnInit = function()
+{
+  //공통코드
+  this.fnCommonCode();
+};
+</code></pre>
+<h2 is-upgraded><strong>fnCommonCode 함수 생성</strong></h2>
+<p><code>take.tranCode</code> 함수를 사용하여 공통코드 조회기능을 구현합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 4 사용자 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnCommonCode : 코드호출 함수
+ * @param  {String} N/A 
+ * @example this.fnCommonCode();
+ */
+this.fnCommonCode = function ()
+{
+  take.tranCode(
+    this,            // 현재 Form 객체
+    [&#34;00009&#34;],       // 코드그룹ID : 시스템 - 코드관리
+    [&#34;dsCboUseYn&#34;],  // InDataset (코드그룹ID 개수와 동일해야함)
+    [&#34;SEL&#34;],         // 콤보헤더용 (ALL:전체, SEL:선택, &#34;&#34;:사용안함)
+                     // (코드그룹ID 개수와 동일해야함)
+    // Call Back 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
+    function(sId, nErrCd, sErrMsg)  
+    {
+      // sId     : Transaction Id
+      // nErrCd  : Return Code (음수:오류)
+      // sErrMsg : Return Message
+    },
+    true             // true:비동기, false:동기 (기본값은 비동기)
+  );
+};
+</code></pre>
+<h2 is-upgraded><strong>QuickView 실행</strong></h2>
+<p>Eclipse의 <code>Tomcat</code>을 구동시키고 Nexacro Studio의 <code>QuickView</code>를 실행합니다.</p>
+<p class="image-container"><img alt="quickview1" src="img\\5e1aa3f9894c1a62.png"></p>
+<h2 is-upgraded><strong>디버깅 화면 조회</strong></h2>
+<p>브라우저 빈공간에 <code>ctrl + q</code>를 입력하면 디버깅 화면이 팝업됩니다.<br><code>Dataset</code> - <code>this.dsCboUseYn</code> - <code>View</code> 로 이동하여 Dataset을 확인할 수 있습니다.</p>
+<p class="image-container"><img alt="quickview2" src="img\\617b5cce9067c4aa.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="공통코드(00017) 조회" duration="10">
+        
+        <h2 is-upgraded><strong>Dataset 추가</strong></h2>
+<p>공통코드(00017)을 위한 <code>dsCboStatus</code>를 추가합니다.</p>
+<p class="image-container"><img alt="dataset3" src="img\\fba198e40f8ddb11.gif"></p>
+<h2 is-upgraded><strong>Dataset Column 추가</strong></h2>
+<ul>
+<li><strong>code</strong> : <code>코드ID</code></li>
+<li><strong>name</strong> : <code>코드명</code></li>
+<li><strong>ref1</strong> : <code>기타1</code></li>
+<li><strong>ref2</strong> : <code>기타2</code></li>
+<li><strong>ref3</strong> : <code>기타3</code></li>
+</ul>
+<p class="image-container"><img alt="dataset4" src="img\\f21f5d3d2bb5e672.png"></p>
+<h2 is-upgraded><strong>fnCommonCode 함수 수정</strong></h2>
+<p><code>코드그룹ID</code>, <code>InDataset</code>을 추가합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 4 사용자 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnCommonCode : 코드호출 함수
+ * @param  {String} N/A 
+ * @example this.fnCommonCode();
+ */
+this.fnCommonCode = function ()
+{
+  take.tranCode(
+    this,                           // 현재 Form 객체
+    [&#34;00009&#34;, &#34;00017&#34;],             // 코드그룹ID : 시스템 - 코드관리
+    [&#34;dsCboUseYn&#34;, &#34;dsCboStatus&#34;],  // InDataset (코드그룹ID 개수와 동일해야함)
+    [&#34;SEL&#34;, &#34;&#34;],                    // 콤보헤더용 (ALL:전체, SEL:선택, &#34;&#34;:사용안함)
+                                    // (코드그룹ID 개수와 동일해야함)
+    // Call Back 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
+    function(sId, nErrCd, sErrMsg)  
+    {
+      // sId     : Transaction Id
+      // nErrCd  : Return Code (음수:오류)
+      // sErrMsg : Return Message
+    },
+    true             // true:비동기, false:동기 (기본값은 비동기)
+  );
+};
+</code></pre>
+<h2 is-upgraded><strong>QuickView 실행</strong></h2>
+<p>Eclipse의 <code>Tomcat</code>을 구동시키고 Nexacro Studio의 <code>QuickView</code>를 실행합니다.</p>
+<p class="image-container"><img alt="quickview2" src="img\\5e1aa3f9894c1a62.png"></p>
+<h2 is-upgraded><strong>디버깅 화면 조회</strong></h2>
+<p>브라우저 빈공간에 <code>ctrl + q</code>를 입력하면 디버깅 화면이 팝업됩니다.<br><code>Dataset</code> - <code>this.dsCboStatus</code> - <code>View</code> 로 이동하여 Dataset을 확인할 수 있습니다.</p>
+<p class="image-container"><img src="img\\7f6bd924daf5a9b1.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="부서코드 조회" duration="5">
+        
+        <h2 is-upgraded><strong>Dataset 추가</strong></h2>
+<p>이전 단계처럼 Dataset을 추가합니다.</p>
+<p class="image-container"><img alt="dept1" src="img\\3d9d91deaf28e456.png"></p>
+<h2 is-upgraded><strong>fnCommonCode 함수 수정</strong></h2>
+<p>공통코드 조회 <code>Callback</code> 에서 <code>take.tranSelect</code>를 사용한 부서 데이터 조회를 구현합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 4 사용자 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnCommonCode : 코드호출 함수
+ * @param  {String} N/A 
+ * @example this.fnCommonCode();
+ */
+this.fnCommonCode = function ()
+{
+  //부서 Dataset 데이터 비우기
+  this.dsCboDept.clearData();
+
+  take.tranCode(
+
+    ... 중략 ....
+
+    // Call Back 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
+    function(sId, nErrCd, sErrMsg)  
+    {
+      //부서 데이터 조회
+      take.tranSelect
+      (
+        this,                          // 현재 Form 객체
+        &#34;deptList&#34;,                    // Transaction Id
+        &#34;Sample01.smpFormDeptSelect&#34;,  // sqlMapperId
+        &#34;&#34;,                            // Indataset(서버로 보낼 dataset)
+        &#34;dsCboDept&#34;,                   // Outdataset(서버에서 받을 dataset)
+        &#34;&#34;,                            // Parameter
+        &#34;fnCallback&#34;                   // Call Back 함수명 (함수를 바로 사용 가능)
+      );
+    }
+  );
+};
+</code></pre>
+<h2 is-upgraded><strong>fnCallback 함수 수정</strong></h2>
+<p><strong>모든 Transaction</strong>에 대한 Callback 작업을 <code>fnCallback</code>에 정의하는것이 <strong>기본</strong>입니다.<br><code>take.tranSelect</code>에서 지정한 <code>Transaction Id</code>로 구분할 수 있으며 조회 이후 동작을 구현할 수 있습니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 5 TRANSACTION OR CALLBACK 콜백 처리부분
+ ********************************************************/
+/**
+ * fnCallback : transaction callback
+ * @param  : sId      - 서비스 아이디 (공통 콜백에서 넘어옴)
+ * @param  : nErrCd   - 에러코드 (공통 콜백에서 넘어옴)
+ * @param  : sErrMsg  - 에러메세지 (공통 콜백에서 넘어옴)
+ * @return : N/A
+ * @example :  
+ */
+this.fnCallback = function(sId, nErrCd, sErrMsg)
+{
+  //Transaction 에러는 공통에서 처리
+  switch(sId)
+  {
+    // 부서 검색조건 조회 콜백
+    case &#34;deptList&#34; :
+      break;
+      
+    default :
+      break;
+  }    
+};
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="검색 영역" duration="5">
+        
+        <aside class="special"><p><strong>Design Guide</strong></p>
+<ul>
+<li>Layout : 검색조건 개수에 따라 Layout을 결정합니다. <img alt="layout" src="img\\a4230349441fb43f.png"></li>
+<li>Label : 글자수에 따라 <code>width</code>를 조절합니다.<br><img alt="search3" src="img\\53cc3545d6efc18.png"></li>
+<li>위치 : nexacro/<em>guide/publishing/03. PatternGuide.xfdl</em></li>
+</ul>
+</aside>
+<h2 is-upgraded><strong>검색조건 Layout</strong></h2>
+<ul>
+<li><strong>1행 3열 Layout을 사용합니다.</strong></li>
+</ul>
+<h2 is-upgraded><strong>검색조건 대상</strong></h2>
+<ul>
+<li><code>TB_SMP01</code>을 조회 시 사용할 검색조건입니다. <table>
+<tr><td colspan="1" rowspan="1"><p><strong>Desc</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>TB_SMP01</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Component Id</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Dataset Column</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Inner Dataset</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>부서코드</code></p>
+</td><td colspan="1" rowspan="1"><p>DEPT_CD</p>
+</td><td colspan="1" rowspan="1"><p>cboDeptCd</p>
+</td><td colspan="1" rowspan="1"><p>deptCd</p>
+</td><td colspan="1" rowspan="1"><p>dsCboDept</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>사용자ID</code></p>
+</td><td colspan="1" rowspan="1"><p>USER_ID</p>
+</td><td colspan="1" rowspan="1"><p>edtUserId</p>
+</td><td colspan="1" rowspan="1"><p>userId</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>사용여부</code></p>
+</td><td colspan="1" rowspan="1"><p>USE_YN</p>
+</td><td colspan="1" rowspan="1"><p>cboUseYn</p>
+</td><td colspan="1" rowspan="1"><p>useYn</p>
+</td><td colspan="1" rowspan="1"><p>dsCboUseYn</p>
+</td></tr>
+</table>
+</li>
+</ul>
+<h2 is-upgraded><strong>검색 영역용 Div 추가</strong></h2>
+<p class="image-container"><img alt="search1" src="img\\faa25e9a4db1f0bf.png"></p>
+<h2 is-upgraded><strong>Div Properties 수정</strong></h2>
+<ul>
+<li><strong>cssclass</strong> : <code>div_WF_search_d1</code></li>
+<li><strong>id</strong> : <code>divSearch</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>left</strong> : <code>0</code></li>
+<li><strong>top</strong> : <code>0</code></li>
+<li><strong>height</strong> : <code>42</code></li>
+<li><strong>right</strong> : <code>0</code></li>
+<li><strong>minwidth</strong> : <code>1300</code></li>
+</ul>
+<p class="image-container"><img alt="search2" src="img\\aa837aa9136c5428.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="검색 영역 - 부서코드" duration="10">
+        
+        <h2 is-upgraded><strong>Static 추가</strong></h2>
+<p><code>divSearch</code> 내부에 <code>Static</code>을 추가합니다.</p>
+<ul>
+<li><strong>id</strong> : <code>staDeptT</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>text</strong> : <code>사용자 부서</code></li>
+<li><strong>left</strong> : <code>20</code></li>
+<li><strong>top</strong> : <code>8</code></li>
+<li><strong>width</strong> : <code>70</code></li>
+<li><strong>height</strong> : <code>24</code></li>
+</ul>
+<p class="image-container"><img alt="dept1" src="img\\8c6cc2a2070d1bfc.png"></p>
+<h2 is-upgraded><strong>Combo 추가</strong></h2>
+<p><code>divSearch</code> 내부에 <code>Combo</code>를 추가합니다.</p>
+<ul>
+<li><strong>id</strong> : <code>cboDept</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>left</strong> : <code>90</code> <em>staDeptT와의 공백 : 0px</em></li>
+<li><strong>top</strong> : <code>8</code></li>
+<li><strong>width</strong> : <code>180</code></li>
+<li><strong>height</strong> : <code>24</code></li>
+</ul>
+<p class="image-container"><img alt="dept2" src="img\\82bbfa5552918a69.png"></p>
+<h2 is-upgraded><strong>InnerDataset 추가</strong></h2>
+<ul>
+<li><strong>innerdataset</strong> : <code>dsCboDept</code></li>
+<li><strong>code</strong> : <code>code</code></li>
+<li><strong>name</strong> : <code>name</code></li>
+</ul>
+<p class="image-container"><img alt="dept3" src="img\\5e9517de3acd5eba.png"></p>
+<h2 is-upgraded><strong>기본값 지정</strong></h2>
+<p>기본값 지정을 위해 <code>fnCallback</code>을 수정합니다.<br><code>dsCboDept</code>의 데이터가 존재할 경우 <code>cboDept</code>의 <code>index</code>를 <code>0</code>으로 지정합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 5 TRANSACTION OR CALLBACK 콜백 처리부분
+ ********************************************************/
+/**
+ * fnCallback : transaction callback
+ * @param  : sId      - 서비스 아이디 (공통 콜백에서 넘어옴)
+ * @param  : nErrCd   - 에러코드 (공통 콜백에서 넘어옴)
+ * @param  : sErrMsg  - 에러메세지 (공통 콜백에서 넘어옴)
+ * @return : N/A
+ * @example :  
+ */
+this.fnCallback = function(sId, nErrCd, sErrMsg)
+{
+  //Transaction 에러는 공통에서 처리
+  switch(sId)
+  {
+    // 부서 검색조건 조회 콜백
+    case &#34;deptList&#34; :
+      //변수 선언
+      var objDs;
+
+      //부서 검색조건 Dataset
+      objDs = this.dsCboDept;
+
+      //부서 검색조건 데이터가 있으면
+      if (objDs.rowcount &gt; 0)
+      {
+        //부서 검색조건 콤보 첫번데 데이터 셋팅
+        this.divSearch.form.cboDept.set_index(0);
+      }
+      break;
+      
+    default :
+      break;
+  }    
+};
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="검색 영역 - 사용자ID" duration="6">
+        
+        <h2 is-upgraded><strong>Static 추가</strong></h2>
+<p><code>divSearch</code> 내부에 <code>Static</code>을 추가합니다.</p>
+<ul>
+<li><strong>id</strong> : <code>staUserIdT</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>text</strong> : <code>ID</code></li>
+<li><strong>left</strong> : <code>310</code></li>
+<li><strong>top</strong> : <code>8</code></li>
+<li><strong>width</strong> : <code>70</code></li>
+<li><strong>height</strong> : <code>24</code></li>
+</ul>
+<p class="image-container"><img alt="userid1" src="img\\59cbbcbc74a0b47f.png"></p>
+<h2 is-upgraded><strong>Edit 추가</strong></h2>
+<p><code>divSearch</code> 내부에 <code>Edit</code>를 추가합니다.</p>
+<ul>
+<li><strong>id</strong> : <code>edtUserId</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>left</strong> : <code>380</code> <em>staUserIdT와의 공백 : 0px</em></li>
+<li><strong>top</strong> : <code>8</code></li>
+<li><strong>width</strong> : <code>140</code></li>
+<li><strong>height</strong> : <code>24</code></li>
+</ul>
+<p class="image-container"><img alt="userid2" src="img\\f2b105af311fc69a.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="검색 영역 - 사용여부" duration="6">
+        
+        <h2 is-upgraded><strong>Static 추가</strong></h2>
+<p><code>divSearch</code> 내부에 <code>Static</code>을 추가합니다.</p>
+<ul>
+<li><strong>id</strong> : <code>staUseYnT</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>text</strong> : <code>사용여부</code></li>
+<li><strong>left</strong> : <code>560</code></li>
+<li><strong>top</strong> : <code>8</code></li>
+<li><strong>width</strong> : <code>70</code></li>
+<li><strong>height</strong> : <code>24</code></li>
+</ul>
+<p class="image-container"><img alt="useyn1" src="img\\a5cb0c240b6a1290.png"></p>
+<h2 is-upgraded><strong>Combo 추가</strong></h2>
+<p><code>divSearch</code> 내부에 <code>Combo</code>를 추가합니다.</p>
+<ul>
+<li><strong>id</strong> : <code>cboUseYn</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>left</strong> : <code>630</code> <em>staUseYnT와의 공백 : 0px</em></li>
+<li><strong>top</strong> : <code>8</code></li>
+<li><strong>width</strong> : <code>140</code></li>
+<li><strong>height</strong> : <code>24</code></li>
+</ul>
+<p class="image-container"><img alt="useyn2" src="img\\11df85f4ebe45984.png"></p>
+<h2 is-upgraded><strong>InnerDataset 추가</strong></h2>
+<ul>
+<li><strong>innerdataset</strong> : <code>dsCboUseYn</code></li>
+<li><strong>code</strong> : <code>code</code></li>
+<li><strong>name</strong> : <code>name</code></li>
+</ul>
+<p class="image-container"><img alt="useyn3" src="img\\83472c654cd27e0a.png"></p>
+<h2 is-upgraded><strong>기본값 지정</strong></h2>
+<p>기본값 지정을 위해 fnCommonCode를 수정합니다.<br><code>dsCboUseYn</code>의 데이터가 존재할 경우 <code>cboUseYn</code>의 <code>index</code>를 <code>0</code>으로 지정합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 4 사용자 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnCommonCode : 코드호출 함수
+ * @param  {String} N/A 
+ * @example this.fnCommonCode();
+ */
+this.fnCommonCode = function ()
+{
+  ... 중략 ....
+
+  take.tranCode(
+
+    ... 중략 ....
+
+    //사용여부 공통코드 데이터가 있는지 여부
+    if (this.dsCboUseYn.rowcount &gt; 0)
+    {
+      //사용여부 검색조건 콤보에 첫번째 값 세팅
+      this.divSearch.form.cboUseYn.set_index(0);
+    }
+  );
+};
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="검색 영역 - Binding" duration="5">
+        
+        <aside class="special"><p>사용자가 선택 또는 입력한 검색조건의 <code>value</code>를 유지하기 위해선 Dataset에 Binding하는 과정이 필요합니다.</p>
+</aside>
+<h2 is-upgraded><strong>Dataset 추가</strong></h2>
+<p><code>dsSearch</code>를 만들고 아래 컬럼들과 <strong>1행</strong>을 추가해 줍니다.</p>
+<ul>
+<li>userId</li>
+<li>useYn</li>
+<li>deptCd</li>
+</ul>
+<p class="image-container"><img alt="dsSearch1" src="img\\9ab37904cb60488f.png"></p>
+<h2 is-upgraded><strong>부서코드 Binding</strong></h2>
+<p>부서코드 <code>cboDeptCd</code>의 <code>value</code>를 Binding 합니다.</p>
+<ul>
+<li><strong>Dataset</strong> : <code>dsSearch</code></li>
+<li><strong>Column</strong> : <code>deptCd</code></li>
+</ul>
+<p class="image-container"><img alt="cboDeptCd" src="img\\14b60b8c5090d738.png"></p>
+<h2 is-upgraded><strong>사용자ID Binding</strong></h2>
+<p>사용자ID <code>edtUserId</code>의 <code>value</code>를 Binding 합니다.</p>
+<ul>
+<li><strong>Dataset</strong> : <code>dsSearch</code></li>
+<li><strong>Column</strong> : <code>userId</code></li>
+</ul>
+<p class="image-container"><img alt="edtUserId" src="img\\c57e28cd3d42f43c.png"></p>
+<h2 is-upgraded><strong>사용여부 Binding</strong></h2>
+<p>사용여부 <code>cboUseYn</code>의 <code>value</code>를 Binding 합니다.</p>
+<ul>
+<li><strong>Dataset</strong> : <code>dsSearch</code></li>
+<li><strong>Column</strong> : <code>useYn</code></li>
+</ul>
+<p class="image-container"><img alt="cboUseYn" src="img\\d02e4bb2b6fc9cc9.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="검색 영역 - Event" duration="6">
+        
+        <aside class="special"><p>검색 조건이 변경 될 경우 데이터 조회를 실행합니다.</p>
+</aside>
+<h2 is-upgraded>부서코드 onitemchanged</h2>
+<p>부서코드 <code>Combo</code>를 변경할 때 <code>fnSearch</code> 함수를 호출 합니다.</p>
+<pre><code>/*********************************************************
+ * 3 각 COMPONENT 별 EVENT 영역
+ ********************************************************/
+this.divSearch_cboDept_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+  //사용자 목록 조회
+  this.fnSearch(&#34;userList&#34;);
+};
+</code></pre>
+<h2 is-upgraded>사용여부 onitemchanged</h2>
+<p>사용여부 <code>Combo</code>를 변경할 때 <code>fnSearch</code> 함수를 호출 합니다.</p>
+<pre><code>/*********************************************************
+ * 3 각 COMPONENT 별 EVENT 영역
+ ********************************************************/
+this.divSearch_cboUseYn_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+  //사용자 목록 조회
+  this.fnSearch(&#34;userList&#34;);
+};
+</code></pre>
+<h2 is-upgraded>사용자ID onkeydown</h2>
+<p>사용자ID <code>Edit</code>에서 <code>Enter</code>키 입력될 때 <code>fnSearch</code> 함수를 호출합니다.</p>
+<pre><code>/*********************************************************
+ * 3 각 COMPONENT 별 EVENT 영역
+ ********************************************************/
+this.divSearch_edtUserId_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+  //엔터키 다운
+  if (e.keycode == nexacro.Event.KEY_ENTER)
+  {
+    //사용자 목록 조회
+    this.fnSearch(&#34;userList&#34;);
+  }
+};
+</code></pre>
+<aside class="warning"><p><strong>주요 Key Code</strong></p>
+<p>nexacro.Event.KEY_META = 91;<br> nexacro.Event.KEY_RETURN = 13;<br> nexacro.Event.KEY_ENTER = 13;<br> nexacro.Event.KEY_TAB = 9;<br> nexacro.Event.KEY_UP = 38;<br> nexacro.Event.KEY_DOWN = 40;<br> nexacro.Event.KEY_LEFT = 37;<br> nexacro.Event.KEY_RIGHT = 39;<br> nexacro.Event.KEY_SPACE = 32;<br> nexacro.Event.KEY_SHIFT = 16;<br> nexacro.Event.KEY_CTRL = 17;<br> nexacro.Event.KEY_CONTROL = 17;<br> nexacro.Event.KEY_ALT = 18;<br> nexacro.Event.KEY_ESC = 27;</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Mybatis Mapper" duration="10">
+        
+        <h2 is-upgraded><strong>Mapper 생성</strong></h2>
+<p><code>Eclipse</code>에서 <code>src/main/resources/mappers/sample/Sample01Mapper.xml</code> 를 생성합니다.</p>
+<h2 is-upgraded><strong>Mapper 구조</strong></h2>
+<pre><code language="language-xml" class="language-xml">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &#34;-//mybatis.org//DTD Mapper 3.0//EN&#34; &#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&#34;&gt;
+
+&lt;mapper namespace=&#34;Sample01&#34;&gt;
+  &lt;!-- 쿼리 영역 --&gt;
+&lt;/mapper&gt;
+</code></pre>
+<h2 is-upgraded><strong>부서코드 조회 쿼리</strong></h2>
+<p><code>smpFormDeptSelect</code> 를 쿼리 영역에 작성합니다.</p>
+<pre><code language="language-xml" class="language-xml">&lt;select id=&#34;smpFormDeptSelect&#34; parameterType=&#34;map&#34; timeout=&#34;0&#34; resultType=&#34;takeResultMap&#34; useCache=&#34;false&#34;&gt;
+  &lt;![CDATA[
+  /*
+   * Sample01.smpFormDeptSelect
+   * 부서 목록 조회
+   * @author takeit
+   * @since 2023.04.24
+   */
+  ]]&gt;
+  SELECT CODE, NAME
+    FROM (
+          SELECT &#39;&#39; AS CODE
+               , &#39;전체&#39; AS NAME
+               , 0 AS CODE_ORDER
+          &lt;include refid=&#34;UxbInc.dual&#34;/&gt;
+           UNION ALL
+          SELECT DEPT_CD AS CODE
+               , DEPT_NM AS NAME
+               , 1 AS CODE_ORDER
+            FROM TB_SMP02
+           WHERE PARENT_DEPT = &#39;0&#39;)
+   ORDER BY CODE_ORDER, CODE
+&lt;/select&gt;
+</code></pre>
+<h2 is-upgraded><strong>사용자 목록 조회 쿼리</strong></h2>
+<p><code>smpFormSelect</code> 를 쿼리 선언부에 작성합니다.</p>
+<pre><code language="language-xml" class="language-xml">&lt;select id=&#34;smpFormSelect&#34; parameterType=&#34;map&#34; timeout=&#34;0&#34; resultType=&#34;takeResultMap&#34; useCache=&#34;false&#34;&gt;
+  &lt;![CDATA[
+  /*
+   * Sample01.smpFormSelect
+   * 샘플 목록 조회
+   * @author takeit
+   * @since 2023.04.24
+   */
+  ]]&gt;
+  SELECT USER_CD
+       , USER_ID
+       , USER_NM
+       , USER_BIRTHDAY
+       , USER_EMAIL
+       , USER_MOBILE
+       , USER_TEL
+       , USER_FAX
+       , DEPT_CD
+       , USER_STATUS
+       , USE_YN
+       , AGREE_YN
+       , JOIN_DATE
+    FROM TB_SMP01
+   WHERE (CASE WHEN USE_YN IS NULL THEN &#39;N&#39; ELSE USE_YN END) = #{useYn}
+   &lt;if test=&#34;@kr.co.takeit.util.MybatisUtil@notEmpty( deptCd ) &#34;&gt;
+     AND DEPT_CD = #{deptCd}
+   &lt;/if&gt;
+   &lt;if test=&#34;@kr.co.takeit.util.MybatisUtil@notEmpty( userId ) &#34;&gt;
+     AND USER_ID LIKE &lt;include refid=&#34;UxbInc.like&#34;&gt;&lt;property name=&#34;arg1&#34; value=&#34;#{userId}&#34;/&gt;&lt;/include&gt;
+   &lt;/if&gt;
+   ORDER BY USER_CD
+&lt;/select&gt;
+</code></pre>
+<aside class="warning"><p><strong>takeResultMap</strong></p>
+<ul>
+<li><strong>UXBooster</strong>의 resultMap은 SQL 실행 결과를 <code>Camel</code>, <code>Snake</code>등으로 쉽게 변환 할 수 있습니다.</li>
+</ul>
+</aside>
+<aside class="warning"><p><strong>MybatisUtil</strong></p>
+<ul>
+<li><strong>UXBooster</strong>는 공백체크를 위한 Mybatis조건문을 <code>MybatisUtil</code>의 메소드 형태로 제공합니다.<ul>
+<li><code>MybatisUtil.empty</code> : Value 공백 또는 Null 체크</li>
+<li><code>MybatisUtil.notEmpty</code> : Value 존재 체크</li>
+</ul>
+</li>
+</ul>
+</aside>
+<aside class="warning"><p><strong>UxbInc</strong></p>
+<ul>
+<li><strong>UXBooster</strong>의 Mapper는 (DBMS별 차이점에 따른) SQL의 추가 수정없이 Vendor별로 정의된 <code>UXBInc</code>의 쿼리를 자동으로 실행합니다.</li>
+<li><strong>UXBooster</strong> 내부 Table들의 명칭을 변수로 관리 함으로써 Table명칭 변경, 접두사/접미어 추가, 네임스페이스 지정에 유연하게 대처 할 수 있습니다.</li>
+</ul>
+</aside>
+<h2 is-upgraded><strong>Tomcat 재시작</strong></h2>
+<p>Eclipse의 <code>Tomcat</code>을 재시작 합니다.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="fnSearch" duration="15">
+        
+        <aside class="special"><p><strong>fnSearch</strong>는 UXBooster에서 <code>조회</code> 시 사용하는 기본함수입니다.<br> 반드시 존재해야 하는 함수입니다.</p>
+</aside>
+<h2 is-upgraded><strong>fnSearch 함수</strong></h2>
+<p><code>take.tranSelect</code>를 사용한 <code>TB_SMP01</code> 데이터 조회를 구현합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 2 필수 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnSearch : 조회 transaction (필수) --&gt; 공통 조회에서 호출할 디폴트값 세팅 필요
+ * @param  {String} sTranId 트랜젝션 아이디
+ * @return {N/A}    N/A
+ * @example this.fnSearch(&#34;ID&#34;);
+ */
+this.fnSearch = function(sTranId)
+{
+  //공통 조회에서 호출할 디폴트값 세팅 필요
+  if (take.nvl(sTranId, &#34;&#34;)==&#34;&#34;) sTranId = &#34;userList&#34;;
+  
+  switch(sTranId) {   
+    case &#34;userList&#34;:
+      //Dataset 비우기
+      this.dsList.clearData();
+
+      //조회
+      take.tranSelect(
+        this,                      //현재 Form 객체
+        sTranId,                   //Transaction Id
+        &#34;Sample01.smpFormSelect&#34;,  //SQL Mapper Id
+        &#34;dsSearch&#34;,                //InDataset(서버로 보낼 dataset)
+        &#34;dsList&#34;,                  //OutDataset(서버에서 받을 dataset)
+        &#34;&#34;,                        //Parameter
+        &#34;fnCallback&#34;);             //Callback 함수명(함수를 바로 사용 가능)
+
+      break;
+
+    default:
+      break;
+    }
+  };
+</code></pre>
+<h2 is-upgraded><strong>fnCallback 함수 수정</strong></h2>
+<p><code>switch~case</code>구문에 <code>Transaction Id</code>가 <code>userList</code>인 경우를 추가해줍니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 5 TRANSACTION OR CALLBACK 콜백 처리부분
+ ********************************************************/
+/**
+ * fnCallback : transaction callback
+ * @param  : sId      - 서비스 아이디 (공통 콜백에서 넘어옴)
+ * @param  : nErrCd   - 에러코드 (공통 콜백에서 넘어옴)
+ * @param  : sErrMsg  - 에러메세지 (공통 콜백에서 넘어옴)
+ * @return : N/A
+ * @example :  
+ */
+this.fnCallback = function(sId, nErrCd, sErrMsg)
+{
+  //Transaction 에러는 공통에서 처리
+  switch(sId)
+  {
+    // 부서 검색조건 조회 콜백
+    case &#34;deptList&#34; :
+      ...중략...
+      break;
+    
+    //조회 콜백
+    case &#34;userList&#34; :
+      break;
+
+    default :
+      break;
+  }    
+};
+</code></pre>
+<h2 is-upgraded><strong>Dataset 추가</strong></h2>
+<ol type="1">
+<li>Dataset을 추가합니다.</li>
+</ol>
+<p><code>TB_SMP01</code> 데이터를 위한 <code>dsList</code>를 추가합니다.</p>
+<p class="image-container"><img alt="dsList" src="img\\237e14d6a24c023c.png"></p>
+<ol type="1" start="2">
+<li>QuickView를 실행합니다.<br><img alt="quickview1" src="img\\5e1aa3f9894c1a62.png"></li>
+<li>검색조건을 변경하여 데이터를 조회합니다.<br><code>사용여부</code>를 <code>사용</code>으로 선택합니다.<br><img alt="quickview2" src="img\\e4800bb73c3a13a9.png"></li>
+<li>디버깅 화면을 조회합니다.<br><code>ctrl + q</code>를 입력하여 디버깅 화면을 조회합니다.<br><code>Dataset</code> - <code>this.dsList</code> - <code>view</code> 로 이동하여 Dataset을 확인할 수 있습니다.<br><img alt="quickview3" src="img\\67fdbfb6463236ed.png"></li>
+<li>Dataset 컬럼정보를 복사합니다.<br><code>XML(all)</code>로 이동하여 Dataset의 <code>ColumnInfo</code>를 복사합니다.<br><img alt="quickview4" src="img\\2355a56a7b17d7b2.png"></li>
+<li>Dataset source를 조회합니다.<br><code>Nexacro Studio</code>로 돌아와 <code>dsList</code>의 <code>source</code>로 이동합니다.<br><img alt="quickview5" src="img\\49f55e4bcfeaa964.png"></li>
+<li>Dataset 컬럼을 추가합니다.<br><code>ColumnInfo</code>를 붙여넣어 Dataset 컬럼 정보를 간편하게 등록할 수 있습니다.<br><img alt="quickview6" src="img\\f01f7dc00eabab36.png"></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="유효성 검증" duration="3">
+        
+        <aside class="special"><p>검색조건 중 <code>사용여부</code>를 필수 조건으로 지정합니다.<br> 검증이 실패한다면 안내 메세지 출력과 동시에 스크립트 실행을 중단합니다.</p>
+</aside>
+<h2 is-upgraded><strong>fnInit 함수 수정</strong></h2>
+<p><code>takeval.add</code> 함수를 사용하여 <code>사용여부</code>를 유효성 검증 대상으로 추가합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 4 사용자 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnInit : 초기화 함수 검색조건 초기화 
+ * @return {N/A}    N/A
+ * @example this.fnInit();
+ */
+this.fnInit = function()
+{
+  //공통코드
+  this.fnCommonCode();
+
+  //변수 선언
+  var objDivForm;
+  objDivForm = this.divSearch.form;
+  
+  //필수 검색조건 추가
+  takeval.add(
+    this, 
+    &#34;Search&#34;,                  //유효성 검증 그룹 아이디(그룹별로 추가할 수 있음)
+    objDivForm.cboUseYn,       //체크 대상 컴포넌트
+    objDivForm.staUseYnT.text, //체크할 명칭(ex:&#34;사용여부&#34;)
+    &#34;value&#34;,                   //체크대상 (컴포넌트:Properti, Grid:Cell, Dataset:Column 명)
+    true,                      //null check
+    &#34;string&#34;,                  //타입(string, number, date등)체크
+    &#34;&#34;,                        //체크수(문자는 자릿수, 숫자는 구간[form,to])
+    &#34;&#34;);                       //Byte로 체크여부 (생략가능) 
+};
+</code></pre>
+<h2 is-upgraded><strong>fnSearch 함수 수정</strong></h2>
+<p><code>takeval.check</code> 함수를 호출하여 유효성을 검증합니다.</p>
+<pre><code language="language-javascript" class="language-javascript">/*********************************************************
+ * 2 필수 FUNCTION 영역
+ ********************************************************/
+/**
+ * fnSearch : 조회 transaction (필수) --&gt; 공통 조회에서 호출할 디폴트값 세팅 필요
+ * @param  {String} sTranId 트랜젝션 아이디
+ * @return {N/A}    N/A
+ * @example this.fnSearch(&#34;ID&#34;);
+ */
+this.fnSearch = function(sTranId)
+{
+  //공통 조회에서 호출할 디폴트값 세팅 필요
+  if (take.nvl(sTranId, &#34;&#34;)==&#34;&#34;) sTranId = &#34;userList&#34;;
+  
+  switch(sTranId) {   
+    case &#34;userList&#34;:
+
+      //유효성 검증
+      if(!takeval.check(this, &#34;Search&#34;)) return;
+
+      //Dataset 비우기
+      this.dsList.clearData();
+
+      ...중략...
+  }
+};
+</code></pre>
+<h2 is-upgraded><strong>출력 예시</strong></h2>
+<p><code>사용여부</code>를 선택하지 않았을 때 유효성 검증을 실패합니다.<br> 그리고 사용자에게 안내 메시지가 출력됩니다.</p>
+<p class="image-container"><img alt="example" src="img\\dbf40a2c5398f571.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="메인 영역" duration="2">
+        
+        <h2 is-upgraded><strong>메인 영역용 Div 추가</strong></h2>
+<p class="image-container"><img alt="divDetail1" src="img\\ba78eb570b3ed597.png"></p>
+<h2 is-upgraded><strong>Div Properties 수정</strong></h2>
+<ul>
+<li><strong>id</strong> : <code>divDetail</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>left</strong> : <code>0</code></li>
+<li><strong>top</strong> : <code>73</code></li>
+<li><strong>right</strong> : <code>0</code></li>
+<li><strong>bottom</strong> : <code>0</code></li>
+<li><strong>minwidth</strong> : <code>1300</code></li>
+</ul>
+<p class="image-container"><img alt="divDetail2" src="img\\dcdfffea0372b34f.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="메인 영역 - 타이틀" duration="2">
+        
+        <h2 is-upgraded><strong>타이틀 Label 추가</strong></h2>
+<p><code>divDetail</code> 내부에 <code>Static</code>을 추가합니다.</p>
+<ul>
+<li><strong>cssclass</strong> : <code>sta_WF_title02</code></li>
+<li><strong>id</strong> : <code>staDetailTitle</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>text</strong> : <code>사용자 목록</code></li>
+<li><strong>usedecorate</strong> : <code>true</code></li>
+<li><strong>left</strong> : <code>0</code></li>
+<li><strong>top</strong> : <code>0</code></li>
+<li><strong>height</strong> : <code>21</code></li>
+<li><strong>right</strong> : <code>0</code></li>
+</ul>
+<p class="image-container"><img alt="divDetail3" src="img\\474a9537299fe214.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="메인 영역 - Grid" duration="3">
+        
+        <h2 is-upgraded><strong>Grid 추가</strong></h2>
+<p><code>divDetail</code> 내부에 <code>Grid</code>를 추가합니다.</p>
+<p class="image-container"><img alt="divDetail4" src="img\\4bd365a566b6a804.png"></p>
+<h2 is-upgraded><strong>Grid Properties 수정</strong></h2>
+<ul>
+<li><strong>id</strong> : <code>grdDetail</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>autofittype</strong> : <code>col</code></li>
+<li><strong>left</strong> : <code>0</code></li>
+<li><strong>top</strong> : <code>6</code> ~ <code>staDetailTitle</code></li>
+<li><strong>right</strong> : <code>0</code></li>
+<li><strong>bottom</strong> : <code>0</code></li>
+</ul>
+<p class="image-container"><img alt="divDetail5" src="img\\c00631cdd0776bb0.png"></p>
+<h2 is-upgraded><strong>Dataset Binding</strong></h2>
+<p><code>binddataset</code>속성을 <code>dsList</code>로 지정합니다.</p>
+<p class="image-container"><img alt="divDetail6" src="img\\371c545cac9dbe78.png"></p>
+<p><code>binddataset</code>속성을 지정하게 되면 아래와 같이 Dataset의 컬럼들이 Grid에 추가됩니다.</p>
+<p class="image-container"><img alt="divDetail7" src="img\\6a1468675ebd8190.png"></p>
+<h2 is-upgraded><strong>조회 결과</strong></h2>
+<p><code>dsList</code>의 데이터가 Grid에 출력되는 것을 확인할 수 있습니다.<br> 아직 Grid 헤더와 너비, 높이, 정렬을 수정해야합니다.<br> 또한 코드로 표현되고있는 셀Text를 명칭으로 변환해야합니다.</p>
+<p class="image-container"><img alt="divDetail8" src="img\\75ea3cda527491ec.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="메인 영역 - Grid 컬럼" duration="5">
+        
+        <h2 is-upgraded><strong>Grid Row Size</strong></h2>
+<p>Head Row의 <code>size</code>를 <code>32</code>로 변경합니다.</p>
+<p class="image-container"><img alt="divDetail9" src="img\\4101b88e048a2cad.png"></p>
+<p>Body Row의 <code>size</code>를 <code>30</code>으로 변경합니다.</p>
+<p class="image-container"><img alt="divDetail10" src="img\\e2a83b40780388a5.png"></p>
+<h2 is-upgraded><strong>Head Col</strong></h2>
+<ul>
+<li><code>userCd</code> 컬럼을 삭제합니다.</li>
+<li>다른 컬럼들은 <code>text</code>와 <code>size</code>를 지정합니다. <table>
+<tr><td colspan="1" rowspan="1"><p><strong>Col</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>text</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Size</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userId</p>
+</td><td colspan="1" rowspan="1"><p>ID</p>
+</td><td colspan="1" rowspan="1"><p>80</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userNm</p>
+</td><td colspan="1" rowspan="1"><p>성명</p>
+</td><td colspan="1" rowspan="1"><p>110</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userBirthday</p>
+</td><td colspan="1" rowspan="1"><p>생년월일</p>
+</td><td colspan="1" rowspan="1"><p>120</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userEmail</p>
+</td><td colspan="1" rowspan="1"><p>이메일</p>
+</td><td colspan="1" rowspan="1"><p>160</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userMobile</p>
+</td><td colspan="1" rowspan="1"><p>모바일</p>
+</td><td colspan="1" rowspan="1"><p>110</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userTel</p>
+</td><td colspan="1" rowspan="1"><p>유선전화</p>
+</td><td colspan="1" rowspan="1"><p>110</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userFax</p>
+</td><td colspan="1" rowspan="1"><p>팩스</p>
+</td><td colspan="1" rowspan="1"><p>110</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>deptCd</p>
+</td><td colspan="1" rowspan="1"><p>부서명</p>
+</td><td colspan="1" rowspan="1"><p>100</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>userStatus</p>
+</td><td colspan="1" rowspan="1"><p>상태</p>
+</td><td colspan="1" rowspan="1"><p>100</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>useYn</p>
+</td><td colspan="1" rowspan="1"><p>사용여부</p>
+</td><td colspan="1" rowspan="1"><p>100</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>agreeYn</p>
+</td><td colspan="1" rowspan="1"><p>동의여부</p>
+</td><td colspan="1" rowspan="1"><p>80</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>joinDate</p>
+</td><td colspan="1" rowspan="1"><p>가입일자</p>
+</td><td colspan="1" rowspan="1"><p>120</p>
+</td></tr>
+</table>
+</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="메인 영역 - Grid 셀" duration="6">
+        
+        <h2 is-upgraded><strong>부서코드 명칭 적용</strong></h2>
+<ul>
+<li><strong>displaytype</strong> : <code>combotext</code></li>
+<li><strong>combodataset</strong> : <code>dsCboDept</code><ul>
+<li><strong>combocodecol</strong> : <code>code</code></li>
+<li><strong>combodatacol</strong> : <code>name</code></li>
+</ul>
+</li>
+</ul>
+<p class="image-container"><img alt="divDetail11" src="img\\f6f70054ed1f44cc.png"></p>
+<h2 is-upgraded><strong>사용자상태 명칭 적용</strong></h2>
+<ul>
+<li><strong>displaytype</strong> : <code>combotext</code></li>
+<li><strong>combodataset</strong> : <code>dsCboStatus</code><ul>
+<li><strong>combocodecol</strong> : <code>code</code></li>
+<li><strong>combodatacol</strong> : <code>name</code></li>
+</ul>
+</li>
+</ul>
+<p class="image-container"><img alt="divDetail12" src="img\\dc4b86ba4f4998c5.png"></p>
+<h2 is-upgraded><strong>사용여부 명칭 적용</strong></h2>
+<ul>
+<li><strong>displaytype</strong> : <code>combotext</code></li>
+<li><strong>combodataset</strong> : <code>dsCboUseYn</code><ul>
+<li><strong>combocodecol</strong> : <code>code</code></li>
+<li><strong>combodatacol</strong> : <code>name</code></li>
+</ul>
+</li>
+</ul>
+<p class="image-container"><img alt="divDetail13" src="img\\2165974866260c61.png"></p>
+<h2 is-upgraded><strong>가입일자 Format</strong></h2>
+<ul>
+<li><strong>displaytype</strong> : <code>date</code></li>
+<li><strong>textAlign</strong> : <code>center</code></li>
+<li><strong>caldardateformat</strong> : <code>yyyy-MM-dd</code></li>
+</ul>
+<p class="image-container"><img alt="divDetail14" src="img\\214a5f5a59324545.png"></p>
+<h2 is-upgraded><strong>조회 결과</strong></h2>
+<p>코드로 표현되고있던 셀Text가 <code>명칭</code>으로 변환되었습니다.<br> 더불어 <code>가입일자</code>도 날짜 형태로 변환되었습니다.</p>
+<p><strong>Dateset을 그대로 유지한채 Grid의 셀 출력형태만 변경된 것 입니다.</strong></p>
+<p class="image-container"><img alt="divDetail15" src="img\\77d5f31b9a0f2691.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="메인영역 - takegrid" duration="1">
+        
+        <h2 is-upgraded><strong>takegrid 적용</strong></h2>
+<p>Grid <code>userproperty</code> 를 추가합니다.</p>
+<ul>
+<li><strong>Name</strong> : <code>takegrid</code></li>
+<li><strong>Value</strong> : <code>select</code></li>
+</ul>
+<p class="image-container"><img alt="takegrid1" src="img\\4fa6467ad76385be.png"></p>
+<h2 is-upgraded><strong>적용 결과</strong></h2>
+<p>타이틀 우측으로 전체건수가 표현됩니다.<br> Grid에 <code>순번</code> 컬럼이 추가됩니다.<br> 나머지 기능은 Grid를 <code>우클릭</code>하여 사용할 수 있습니다.</p>
+<p class="image-container"><img alt="takegrid2" src="img\\d845fbc02752130d.png"></p>
+<aside class="warning"><p><strong>그룹 Option</strong></p>
+<ul>
+<li><code>all</code> : 모든기능</li>
+<li><code>select</code> : no, sort, filter, move, hide, excel, fix, reset</li>
+<li><code>crud</code> : checkbox, no, status, sort, filter, move, hide, excel, fix, reset</li>
+</ul>
+<p><strong>개별 Option</strong></p>
+<ul>
+<li><code>checkbox</code> : 체크박스 기능 활성화</li>
+<li><code>no</code> : 순번 기능 활성화</li>
+<li><code>status</code> : 그리드 Row Data 상태 기능 활성화</li>
+<li><code>movetocell</code> : 컬럼 이동 기능 활성화</li>
+<li><code>sort</code> : 정렬 기능 활성화</li>
+<li><code>find</code> : 찾기 기능 활성화</li>
+<li><code>filter</code> : 필터 기능 활성화</li>
+<li><code>hide</code> : 컬럼 숨기기 기능 활성화</li>
+<li><code>excel</code> : Excel import/export 기능 활성화</li>
+<li><code>fix</code> : 행/열 틀 고정 기능 활성화</li>
+<li><code>reset</code> : 초기화 기능 활성화</li>
+<li><code>addrow</code> : 행 추가 기능 활성화</li>
+<li><code>delrow</code> : 행 삭제 기능 활성화</li>
+</ul>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="접기/펼침 버튼" duration="2">
+        
+        <aside class="special"><p><strong>UXBooster</strong>는 <code>메인 영역</code>을 확장시키기 위해 <code>검색 영역</code>을 축소하는 기능을 제공합니다.</p>
+</aside>
+<h2 is-upgraded><strong>Button 추가</strong></h2>
+<p>form 영역에 버튼을 추가합니다.</p>
+<p class="image-container"><img alt="btn1" src="img\\e6edff3176c17558.png"></p>
+<h2 is-upgraded><strong>Button Properties 수정</strong></h2>
+<ul>
+<li><strong>cssclass</strong> : <code>btn_WF_searchFold</code></li>
+<li><strong>id</strong> : <code>btnShowHide</code> <em>id를 임의로 변경 하지 말 것</em></li>
+<li><strong>text</strong> : <code>공백</code></li>
+<li><strong>left</strong> : <code>48.76</code>%</li>
+<li><strong>top</strong> : <code>-1</code> ~ <code>divSearch</code></li>
+<li><strong>width</strong> : <code>40</code></li>
+<li><strong>height</strong> : <code>16</code></li>
+</ul>
+<p class="image-container"><img alt="btn2" src="img\\f5ed80685eb79ec7.png"></p>
+<h2 is-upgraded><strong>메인 영역 </strong><strong><code>divDetail</code></strong><strong> Properties 수정</strong></h2>
+<ul>
+<li><strong>top</strong> : <code>-1</code> ~ <code>btnShowHide</code></li>
+</ul>
+<p class="image-container"><img alt="btn3" src="img\\2ff1fc6ee75c1acf.png"></p>
+<h2 is-upgraded><strong>적용 결과</strong></h2>
+<p class="image-container"><img alt="btn2" src="img\\1c9547e5f8601ad5.gif"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="/elements/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
