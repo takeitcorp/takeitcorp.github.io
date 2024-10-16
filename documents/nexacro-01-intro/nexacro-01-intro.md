@@ -71,6 +71,7 @@ Duration: 0:01:00
   - Service Interface 불필요, 공용 DAO 제공, Exception 처리
   - Xss 공격 방지, 로깅 처리
   - 페이징 처리, 유틸 클래스 제공
+  - 디버깅 화면
 
 ### **관리자 기능**
   - 시스템 접근 이력 / 제어
