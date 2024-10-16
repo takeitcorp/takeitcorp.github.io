@@ -38,6 +38,18 @@ public void test() {
 }
 ```
 
+``` bash
+> Task :app:signingReport
+Variant: debug
+Config: debug
+Store: /<USER_HOME_FOLDER>/.android/debug.keystore
+Alias: AndroidDebugKey
+MD5: XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX
+SHA1: XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX
+SHA-256: XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX
+Valid until: Tuesday, January 19, 2038
+```
+
 ---
 
 ### **노트**
@@ -62,6 +74,33 @@ Duration: 0:04:00
 * Tomcat : 9.0
 * DB : Oracle, MSSQL, MySQL, PostgreSQL, Tibero, Sybase, DB2
 * IDE : Eclipse 2022-12(4.26.0), eGovFrameDev-4.2.0, Nexacro Studio(Latest)
+
+## li
+
+### **제목 + 내용**
+
+1. 대제목1  
+    내용입니다.
+
+1. 대제목2  
+    내용입니다.
+
+1. 대제목3  
+    내용입니다.
+
+### **직접 번호를 지정**
+
+1. 대제목1
+    - **소제목1** : `소제목1`
+    - **소제목2** : `소제목2`
+
+  ![dept1](img/2024-09-11-14-12-26.png)  
+
+2. 대제목2
+    - **소제목1** : `소제목1`
+    - **소제목2** : `소제목2`
+
+  ![dept1](img/2024-09-11-14-12-26.png)  
 
 ## 링크
 
