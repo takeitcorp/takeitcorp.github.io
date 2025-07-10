@@ -29,7 +29,7 @@ Duration: 0:03:00
 ### **UXBooster 활용 기능**
  - **take.FormTemp** : 기초 코드 자동완성
  - **take.tranSelect** : 데이터 조회
- - **takeval.check** : 유효성 검증
+ - **takeval.check** : 밸리데이션 검증
  - **take.tranCode** : 공통코드 조회
  - **takegrid** : Grid 공통 기능
  - **take debug window** : 디버깅 화면
@@ -213,7 +213,7 @@ this.Form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
  */
 this.fnInit = function()
 {
-  //공통코드
+  // 공통코드
   this.fnCommonCode();
 };
 ```
@@ -239,7 +239,7 @@ this.fnCommonCode = function ()
     ["dsCboUseYn"],  // InDataset (코드그룹ID 개수와 동일해야함)
     ["SEL"],         // 콤보헤더용 (ALL:전체, SEL:선택, "":사용안함)
                      // (코드그룹ID 개수와 동일해야함)
-    // Call Back 함수 (함수명도 사용 가능 ex:"fnCallback")
+    // Callback 함수 (함수명도 사용 가능 ex:"fnCallback")
     function(sId, nErrCd, sErrMsg)  
     {
       // sId     : Transaction Id
@@ -306,7 +306,7 @@ this.fnCommonCode = function ()
     ["dsCboUseYn", "dsCboStatus"],  // InDataset (코드그룹ID 개수와 동일해야함)
     ["SEL", ""],                    // 콤보헤더용 (ALL:전체, SEL:선택, "":사용안함)
                                     // (코드그룹ID 개수와 동일해야함)
-    // Call Back 함수 (함수명도 사용 가능 ex:"fnCallback")
+    // Callback 함수 (함수명도 사용 가능 ex:"fnCallback")
     function(sId, nErrCd, sErrMsg)  
     {
       // sId     : Transaction Id
@@ -357,28 +357,34 @@ Duration: 0:05:00
  */
 this.fnCommonCode = function ()
 {
-  //부서 Dataset 데이터 비우기
-  this.dsCboDept.clearData();
+  // 변수 선언
+  var objDsCboDept;
+
+  objDsCboDept = this.dsCboDept;
+
+  // 부서 Dataset 데이터 비우기
+  objDsCboDept.clearData();
 
   take.tranCode(
 
     ... 중략 ....
 
-    // Call Back 함수 (함수명도 사용 가능 ex:"fnCallback")
+    // Callback 함수 (함수명도 사용 가능 ex:"fnCallback")
     function(sId, nErrCd, sErrMsg)  
     {
-      //부서 데이터 조회
+      // 부서 데이터 조회
       take.tranSelect
       (
         this,                          // 현재 Form 객체
         "deptList",                    // Transaction Id
         "Sample01.smpFormDeptSelect",  // sqlMapperId
-        "",                            // Indataset(서버로 보낼 dataset)
-        "dsCboDept",                   // Outdataset(서버에서 받을 dataset)
+        "",                            // Indataset(서버로 보낼 Dataset)
+        "dsCboDept",                   // Outdataset(서버에서 받을 Dataset)
         "",                            // Parameter
-        "fnCallback"                   // Call Back 함수명 (함수를 바로 사용 가능)
+        "fnCallback"                   // Callback 함수명 (함수를 바로 사용 가능)
       );
-    }
+    },
+    true             // true:비동기, false:동기 (기본값은 비동기)
   );
 };
 ```
@@ -518,17 +524,22 @@ Duration: 0:10:00
     {
       // 부서 검색조건 조회 콜백
       case "deptList" :
-        //변수 선언
-        var objDs;
+        // 변수 선언
+        var objDs, objCboDept;
 
-        //부서 검색조건 Dataset
+        // 부서 검색조건 Dataset
         objDs = this.dsCboDept;
+        objCboDept = this.divSearch.form.cboDept;
 
-        //부서 검색조건 데이터가 있으면
+        // 부서 검색조건 데이터가 있으면
         if (objDs.rowcount > 0)
         {
-          //부서 검색조건 콤보 첫번데 데이터 셋팅
-          this.divSearch.form.cboDept.set_index(0);
+          // 부서콤보 첫번째 데이터 세팅
+          objDs.insertRow(0);
+          objDs.setColumn(0, "code", "");
+          objDs.setColumn(0, "name", "전체");
+
+          objCboDept.set_index(0);
         }
         break;
         
@@ -620,18 +631,30 @@ Duration: 0:06:00
    */
   this.fnCommonCode = function ()
   {
+    // 변수 선언
+    var objDsCboDept, objCboUseYn, objDsCboUseYn;
+    
+    objDsCboDept = this.dsCboDept;
+    objCboUseYn = this.divSearch.form.cboUseYn;
+    objDsCboUseYn = this.dsCboUseYn;
+    
     ... 중략 ....
 
     take.tranCode(
 
       ... 중략 ....
 
-      //사용여부 공통코드 데이터가 있는지 여부
-      if (this.dsCboUseYn.rowcount > 0)
+      // Callback 함수 (함수명도 사용 가능 ex:"fnCallback")
+      function(sId, nErrCd, sErrMsg)
       {
-        //사용여부 검색조건 콤보에 첫번째 값 세팅
-        this.divSearch.form.cboUseYn.set_index(0);
-      }
+        // 사용여부 공통코드 데이터가 있는지 여부
+        if (objDsCboUseYn.rowcount > 0)
+        {
+          // 사용여부 검색조건 콤보에 첫번째 값 세팅
+          objCboUseYn.set_index(0);
+        }
+      },
+      true             // true:비동기, false:동기 (기본값은 비동기)
     );
   };
   ```
@@ -786,19 +809,11 @@ Duration: 0:10:00
    * @since 2023.04.24
    */
   ]]>
-  SELECT CODE, NAME
-    FROM (
-          SELECT '' AS CODE
-               , '전체' AS NAME
-               , 0 AS CODE_ORDER
-          <include refid="UxbInc.dual"/>
-           UNION ALL
-          SELECT DEPT_CD AS CODE
-               , DEPT_NM AS NAME
-               , 1 AS CODE_ORDER
-            FROM TB_SMP02
-           WHERE PARENT_DEPT = '0')
-   ORDER BY CODE_ORDER, CODE
+  SELECT DEPT_CD AS CODE
+       , DEPT_NM AS NAME
+    FROM TB_SMP02
+   WHERE PARENT_DEPT = '0'
+   ORDER BY DEPT_CD, DEPT_NM
 </select>
 ```
 
@@ -892,22 +907,30 @@ Duration: 0:15:00
 this.fnSearch = function(sTranId)
 {
   //공통 조회에서 호출할 디폴트값 세팅 필요
-  if (take.nvl(sTranId, "")=="") sTranId = "userList";
+  if (take.isEmpty(sTranId)) sTranId = "userList";
   
   switch(sTranId) {   
-    case "userList":
-      //Dataset 비우기
-      this.dsList.clearData();
+    case "userList" :
+      // 변수 선언
+      var objDivSearch, objDsList;
+      var sParam;
+      
+      objDivSearch = this.divSearch.form;
+      objDsList    = this.dsList;
+      sParam       = "";
 
-      //조회
+      // Dataset 비우기
+      objDsList.clearData();
+
+      // 조회
       take.tranSelect(
-        this,                      //현재 Form 객체
-        sTranId,                   //Transaction Id
-        "Sample01.smpFormSelect",  //SQL Mapper Id
-        "dsSearch",                //InDataset(서버로 보낼 dataset)
-        "dsList",                  //OutDataset(서버에서 받을 dataset)
-        "",                        //Parameter
-        "fnCallback");             //Callback 함수명(함수를 바로 사용 가능)
+        this,                      // 현재 Form 객체
+        sTranId,                   // Transaction Id
+        "Sample01.smpFormSelect",  // SQL Mapper Id
+        "dsSearch",                // InDataset(서버로 보낼 Dataset)
+        "dsList",                  // OutDataset(서버에서 받을 Dataset)
+        "",                        // Parameter
+        "fnCallback");             // Callback 함수명(함수를 바로 사용 가능)
 
       break;
 
@@ -919,7 +942,7 @@ this.fnSearch = function(sTranId)
 
 ### **fnCallback 함수 수정**
 
-`switch~case`구문에 `Transaction Id`가 `userList`인 경우를 추가해줍니다.
+`switch ~ case`구문에 `Transaction Id`가 `userList`인 경우를 추가해줍니다.
 
 ```javascript
 /*********************************************************
@@ -943,7 +966,7 @@ this.fnCallback = function(sId, nErrCd, sErrMsg)
       ...중략...
       break;
     
-    //조회 콜백
+    // 조회 콜백
     case "userList" :
       break;
 
@@ -987,7 +1010,7 @@ this.fnCallback = function(sId, nErrCd, sErrMsg)
 
 -------------------------------------------------------------------------------------------------------------
 
-## 유효성 검증
+## 밸리데이션 검증
 Duration: 0:03:00
 
 > aside positive
@@ -995,9 +1018,16 @@ Duration: 0:03:00
 >  검색조건 중 `사용여부`를 필수 조건으로 지정합니다.  
 >  검증이 실패한다면 안내 메세지 출력과 동시에 스크립트 실행을 중단합니다.  
 
+### **필수입력 CSS 적용**
+
+사용여부 `Static`과 `Combo`에 필수입력임을 알려주는 CSS를 적용합니다.
+
+ - **staUseYnT** : `sta_color_orange`  
+ - **cboUseYn** : `cmb_WF_essential`
+
 ### **fnInit 함수 수정**
 
-`takeval.add` 함수를 사용하여 `사용여부`를 유효성 검증 대상으로 추가합니다.
+`takeval.add` 함수를 사용하여 `사용여부`를 밸리데이션 검증 대상으로 추가합니다.
 
 ```javascript
 /*********************************************************
@@ -1010,30 +1040,30 @@ Duration: 0:03:00
  */
 this.fnInit = function()
 {
-  //공통코드
+  // 공통코드
   this.fnCommonCode();
 
-  //변수 선언
+  // 변수 선언
   var objDivForm;
   objDivForm = this.divSearch.form;
   
-  //필수 검색조건 추가
+  // 밸리데이션 추가
   takeval.add(
     this, 
-    "Search",                  //유효성 검증 그룹 아이디(그룹별로 추가할 수 있음)
-    objDivForm.cboUseYn,       //체크 대상 컴포넌트
-    objDivForm.staUseYnT.text, //체크할 명칭(ex:"사용여부")
-    "value",                   //체크대상 (컴포넌트:Properti, Grid:Cell, Dataset:Column 명)
-    true,                      //null check
-    "string",                  //타입(string, number, date등)체크
-    "",                        //체크수(문자는 자릿수, 숫자는 구간[form,to])
-    "");                       //Byte로 체크여부 (생략가능) 
+    "Search",                   // 밸리데이션 그룹 ID(밸리데이션 대상을 그룹으로 관리)
+    objDivForm.cboUseYn,        // 밸리데이션 대상
+    objDivForm.staUseYnT.text,  // 밸리데이션 명칭
+    "value",                    // 밸리데이션 대상 속성(Component:Property, Grid:Cell, Dataset:Column)
+    true,                       // Null Check 여부
+    "string",                   // Data Type(string, number, date)
+    "",                         // Data Length(string:length, number/date:[form,to])
+    "");                        // Byte Check 여부(생략가능) 
 };
 ```
 
 ### **fnSearch 함수 수정**
 
-`takeval.check` 함수를 호출하여 유효성을 검증합니다.
+`takeval.check` 함수를 호출하여 밸리데이션을 검증합니다.
 
 ```javascript
 /*********************************************************
@@ -1048,16 +1078,17 @@ this.fnInit = function()
 this.fnSearch = function(sTranId)
 {
   //공통 조회에서 호출할 디폴트값 세팅 필요
-  if (take.nvl(sTranId, "")=="") sTranId = "userList";
+  if (take.isEmpty(sTranId)) sTranId = "userList";
   
   switch(sTranId) {   
-    case "userList":
+    case "userList" :
 
-      //유효성 검증
+      // 밸리데이션 검증
       if(!takeval.check(this, "Search")) return;
 
-      //Dataset 비우기
-      this.dsList.clearData();
+      // 변수 선언
+      var objDivSearch, objDsList;
+      var sParam;
 
       ...중략...
   }
@@ -1066,7 +1097,7 @@ this.fnSearch = function(sTranId)
 
 ### **출력 예시**
 
-`사용여부`를 선택하지 않았을 때 유효성 검증을 실패합니다.  
+`사용여부`를 선택하지 않았을 때 밸리데이션 검증을 실패합니다.  
 그리고 사용자에게 안내 메시지가 출력되며 실패한 `Component`로 `Focus`가 이동합니다.
 
 ![example](img/2024-10-15-10-58-04.png)
@@ -1107,7 +1138,7 @@ Duration: 0:02:00
   - **height** : `21`
   - **right** : `0`
 
-  ![divDetail3](img/2024-10-15-13-28-12.png)
+  ![divDetail3](img/2024-10-22-09-28-52.png)
 
 -------------------------------------------------------------------------------------------------------------
 

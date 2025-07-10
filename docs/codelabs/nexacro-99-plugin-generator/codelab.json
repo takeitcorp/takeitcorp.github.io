@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2024-10-22T13:42:49+09:00",
-  "id": "nexacro-03-smpForm01",
-  "duration": 126,
-  "title": "3. 화면 유형별 샘플 01",
+  "updated": "2025-07-10T14:23:03+09:00",
+  "id": "nexacro-99-plugin-generator",
+  "duration": 0,
+  "title": "UXBooster Plugin 소스생성",
   "authors": "glorial",
-  "summary": "3. 화면 유형별 샘플 01",
-  "source": "nexacro-03-smpForm01.md",
+  "summary": "UXBooster Plugin Generator",
+  "source": "nexacro-99-plugin-generator.md",
   "theme": "",
   "status": [
     "published"
@@ -22,5 +22,5 @@
     "uxbooster-nexacro"
   ],
   "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
-  "url": "nexacro-03-smpForm01"
+  "url": "nexacro-99-plugin-generator"
 }

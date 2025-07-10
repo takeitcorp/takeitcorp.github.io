@@ -47,7 +47,7 @@
 <ul>
 <li><strong>take.FormTemp</strong> : 기초 코드 자동완성</li>
 <li><strong>take.tranSelect</strong> : 데이터 조회</li>
-<li><strong>takeval.check</strong> : 유효성 검증</li>
+<li><strong>takeval.check</strong> : 밸리데이션 검증</li>
 <li><strong>take.tranCode</strong> : 공통코드 조회</li>
 <li><strong>takegrid</strong> : Grid 공통 기능</li>
 <li><strong>take debug window</strong> : 디버깅 화면</li>
@@ -528,7 +528,7 @@ this.Form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
  */
 this.fnInit = function()
 {
-  //공통코드
+  // 공통코드
   this.fnCommonCode();
 };
 </code></pre>
@@ -550,7 +550,7 @@ this.fnCommonCode = function ()
     [&#34;dsCboUseYn&#34;],  // InDataset (코드그룹ID 개수와 동일해야함)
     [&#34;SEL&#34;],         // 콤보헤더용 (ALL:전체, SEL:선택, &#34;&#34;:사용안함)
                      // (코드그룹ID 개수와 동일해야함)
-    // Call Back 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
+    // Callback 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
     function(sId, nErrCd, sErrMsg)  
     {
       // sId     : Transaction Id
@@ -603,7 +603,7 @@ this.fnCommonCode = function ()
     [&#34;dsCboUseYn&#34;, &#34;dsCboStatus&#34;],  // InDataset (코드그룹ID 개수와 동일해야함)
     [&#34;SEL&#34;, &#34;&#34;],                    // 콤보헤더용 (ALL:전체, SEL:선택, &#34;&#34;:사용안함)
                                     // (코드그룹ID 개수와 동일해야함)
-    // Call Back 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
+    // Callback 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
     function(sId, nErrCd, sErrMsg)  
     {
       // sId     : Transaction Id
@@ -641,28 +641,34 @@ this.fnCommonCode = function ()
  */
 this.fnCommonCode = function ()
 {
-  //부서 Dataset 데이터 비우기
-  this.dsCboDept.clearData();
+  // 변수 선언
+  var objDsCboDept;
+
+  objDsCboDept = this.dsCboDept;
+
+  // 부서 Dataset 데이터 비우기
+  objDsCboDept.clearData();
 
   take.tranCode(
 
     ... 중략 ....
 
-    // Call Back 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
+    // Callback 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
     function(sId, nErrCd, sErrMsg)  
     {
-      //부서 데이터 조회
+      // 부서 데이터 조회
       take.tranSelect
       (
         this,                          // 현재 Form 객체
         &#34;deptList&#34;,                    // Transaction Id
         &#34;Sample01.smpFormDeptSelect&#34;,  // sqlMapperId
-        &#34;&#34;,                            // Indataset(서버로 보낼 dataset)
-        &#34;dsCboDept&#34;,                   // Outdataset(서버에서 받을 dataset)
+        &#34;&#34;,                            // Indataset(서버로 보낼 Dataset)
+        &#34;dsCboDept&#34;,                   // Outdataset(서버에서 받을 Dataset)
         &#34;&#34;,                            // Parameter
-        &#34;fnCallback&#34;                   // Call Back 함수명 (함수를 바로 사용 가능)
+        &#34;fnCallback&#34;                   // Callback 함수명 (함수를 바로 사용 가능)
       );
-    }
+    },
+    true             // true:비동기, false:동기 (기본값은 비동기)
   );
 };
 </code></pre>
@@ -807,17 +813,22 @@ this.fnCallback = function(sId, nErrCd, sErrMsg)
   {
     // 부서 검색조건 조회 콜백
     case &#34;deptList&#34; :
-      //변수 선언
-      var objDs;
+      // 변수 선언
+      var objDs, objCboDept;
 
-      //부서 검색조건 Dataset
+      // 부서 검색조건 Dataset
       objDs = this.dsCboDept;
+      objCboDept = this.divSearch.form.cboDept;
 
-      //부서 검색조건 데이터가 있으면
+      // 부서 검색조건 데이터가 있으면
       if (objDs.rowcount &gt; 0)
       {
-        //부서 검색조건 콤보 첫번데 데이터 셋팅
-        this.divSearch.form.cboDept.set_index(0);
+        // 부서콤보 첫번째 데이터 세팅
+        objDs.insertRow(0);
+        objDs.setColumn(0, &#34;code&#34;, &#34;&#34;);
+        objDs.setColumn(0, &#34;name&#34;, &#34;전체&#34;);
+
+        objCboDept.set_index(0);
       }
       break;
       
@@ -899,18 +910,30 @@ this.fnCallback = function(sId, nErrCd, sErrMsg)
  */
 this.fnCommonCode = function ()
 {
+  // 변수 선언
+  var objDsCboDept, objCboUseYn, objDsCboUseYn;
+  
+  objDsCboDept = this.dsCboDept;
+  objCboUseYn = this.divSearch.form.cboUseYn;
+  objDsCboUseYn = this.dsCboUseYn;
+  
   ... 중략 ....
 
   take.tranCode(
 
     ... 중략 ....
 
-    //사용여부 공통코드 데이터가 있는지 여부
-    if (this.dsCboUseYn.rowcount &gt; 0)
+    // Callback 함수 (함수명도 사용 가능 ex:&#34;fnCallback&#34;)
+    function(sId, nErrCd, sErrMsg)
     {
-      //사용여부 검색조건 콤보에 첫번째 값 세팅
-      this.divSearch.form.cboUseYn.set_index(0);
-    }
+      // 사용여부 공통코드 데이터가 있는지 여부
+      if (objDsCboUseYn.rowcount &gt; 0)
+      {
+        // 사용여부 검색조건 콤보에 첫번째 값 세팅
+        objCboUseYn.set_index(0);
+      }
+    },
+    true             // true:비동기, false:동기 (기본값은 비동기)
   );
 };
 </code></pre>
@@ -1026,19 +1049,11 @@ this.divSearch_edtUserId_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEven
    * @since 2023.04.24
    */
   ]]&gt;
-  SELECT CODE, NAME
-    FROM (
-          SELECT &#39;&#39; AS CODE
-               , &#39;전체&#39; AS NAME
-               , 0 AS CODE_ORDER
-          &lt;include refid=&#34;UxbInc.dual&#34;/&gt;
-           UNION ALL
-          SELECT DEPT_CD AS CODE
-               , DEPT_NM AS NAME
-               , 1 AS CODE_ORDER
-            FROM TB_SMP02
-           WHERE PARENT_DEPT = &#39;0&#39;)
-   ORDER BY CODE_ORDER, CODE
+  SELECT DEPT_CD AS CODE
+       , DEPT_NM AS NAME
+    FROM TB_SMP02
+   WHERE PARENT_DEPT = &#39;0&#39;
+   ORDER BY DEPT_CD, DEPT_NM
 &lt;/select&gt;
 </code></pre>
 <h2 is-upgraded><strong>사용자 목록 조회 쿼리</strong></h2>
@@ -1120,22 +1135,30 @@ this.divSearch_edtUserId_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEven
 this.fnSearch = function(sTranId)
 {
   //공통 조회에서 호출할 디폴트값 세팅 필요
-  if (take.nvl(sTranId, &#34;&#34;)==&#34;&#34;) sTranId = &#34;userList&#34;;
+  if (take.isEmpty(sTranId)) sTranId = &#34;userList&#34;;
   
   switch(sTranId) {   
-    case &#34;userList&#34;:
-      //Dataset 비우기
-      this.dsList.clearData();
+    case &#34;userList&#34; :
+      // 변수 선언
+      var objDivSearch, objDsList;
+      var sParam;
+      
+      objDivSearch = this.divSearch.form;
+      objDsList    = this.dsList;
+      sParam       = &#34;&#34;;
 
-      //조회
+      // Dataset 비우기
+      objDsList.clearData();
+
+      // 조회
       take.tranSelect(
-        this,                      //현재 Form 객체
-        sTranId,                   //Transaction Id
-        &#34;Sample01.smpFormSelect&#34;,  //SQL Mapper Id
-        &#34;dsSearch&#34;,                //InDataset(서버로 보낼 dataset)
-        &#34;dsList&#34;,                  //OutDataset(서버에서 받을 dataset)
-        &#34;&#34;,                        //Parameter
-        &#34;fnCallback&#34;);             //Callback 함수명(함수를 바로 사용 가능)
+        this,                      // 현재 Form 객체
+        sTranId,                   // Transaction Id
+        &#34;Sample01.smpFormSelect&#34;,  // SQL Mapper Id
+        &#34;dsSearch&#34;,                // InDataset(서버로 보낼 Dataset)
+        &#34;dsList&#34;,                  // OutDataset(서버에서 받을 Dataset)
+        &#34;&#34;,                        // Parameter
+        &#34;fnCallback&#34;);             // Callback 함수명(함수를 바로 사용 가능)
 
       break;
 
@@ -1145,7 +1168,7 @@ this.fnSearch = function(sTranId)
   };
 </code></pre>
 <h2 is-upgraded><strong>fnCallback 함수 수정</strong></h2>
-<p><code>switch~case</code>구문에 <code>Transaction Id</code>가 <code>userList</code>인 경우를 추가해줍니다.</p>
+<p><code>switch ~ case</code>구문에 <code>Transaction Id</code>가 <code>userList</code>인 경우를 추가해줍니다.</p>
 <pre><code language="language-javascript" class="language-javascript">/*********************************************************
  * 5 TRANSACTION OR CALLBACK 콜백 처리부분
  ********************************************************/
@@ -1167,7 +1190,7 @@ this.fnCallback = function(sId, nErrCd, sErrMsg)
       ...중략...
       break;
     
-    //조회 콜백
+    // 조회 콜백
     case &#34;userList&#34; :
       break;
 
@@ -1194,12 +1217,18 @@ this.fnCallback = function(sId, nErrCd, sErrMsg)
 
       </google-codelab-step>
     
-      <google-codelab-step label="유효성 검증" duration="3">
+      <google-codelab-step label="밸리데이션 검증" duration="3">
         
         <aside class="special"><p>검색조건 중 <code>사용여부</code>를 필수 조건으로 지정합니다.<br> 검증이 실패한다면 안내 메세지 출력과 동시에 스크립트 실행을 중단합니다.</p>
 </aside>
+<h2 is-upgraded><strong>필수입력 CSS 적용</strong></h2>
+<p>사용여부 <code>Static</code>과 <code>Combo</code>에 필수입력임을 알려주는 CSS를 적용합니다.</p>
+<ul>
+<li><strong>staUseYnT</strong> : <code>sta_color_orange</code></li>
+<li><strong>cboUseYn</strong> : <code>cmb_WF_essential</code></li>
+</ul>
 <h2 is-upgraded><strong>fnInit 함수 수정</strong></h2>
-<p><code>takeval.add</code> 함수를 사용하여 <code>사용여부</code>를 유효성 검증 대상으로 추가합니다.</p>
+<p><code>takeval.add</code> 함수를 사용하여 <code>사용여부</code>를 밸리데이션 검증 대상으로 추가합니다.</p>
 <pre><code language="language-javascript" class="language-javascript">/*********************************************************
  * 4 사용자 FUNCTION 영역
  ********************************************************/
@@ -1210,28 +1239,28 @@ this.fnCallback = function(sId, nErrCd, sErrMsg)
  */
 this.fnInit = function()
 {
-  //공통코드
+  // 공통코드
   this.fnCommonCode();
 
-  //변수 선언
+  // 변수 선언
   var objDivForm;
   objDivForm = this.divSearch.form;
   
-  //필수 검색조건 추가
+  // 밸리데이션 추가
   takeval.add(
     this, 
-    &#34;Search&#34;,                  //유효성 검증 그룹 아이디(그룹별로 추가할 수 있음)
-    objDivForm.cboUseYn,       //체크 대상 컴포넌트
-    objDivForm.staUseYnT.text, //체크할 명칭(ex:&#34;사용여부&#34;)
-    &#34;value&#34;,                   //체크대상 (컴포넌트:Properti, Grid:Cell, Dataset:Column 명)
-    true,                      //null check
-    &#34;string&#34;,                  //타입(string, number, date등)체크
-    &#34;&#34;,                        //체크수(문자는 자릿수, 숫자는 구간[form,to])
-    &#34;&#34;);                       //Byte로 체크여부 (생략가능) 
+    &#34;Search&#34;,                   // 밸리데이션 그룹 ID(밸리데이션 대상을 그룹으로 관리)
+    objDivForm.cboUseYn,        // 밸리데이션 대상
+    objDivForm.staUseYnT.text,  // 밸리데이션 명칭
+    &#34;value&#34;,                    // 밸리데이션 대상 속성(Component:Property, Grid:Cell, Dataset:Column)
+    true,                       // Null Check 여부
+    &#34;string&#34;,                   // Data Type(string, number, date)
+    &#34;&#34;,                         // Data Length(string:length, number/date:[form,to])
+    &#34;&#34;);                        // Byte Check 여부(생략가능) 
 };
 </code></pre>
 <h2 is-upgraded><strong>fnSearch 함수 수정</strong></h2>
-<p><code>takeval.check</code> 함수를 호출하여 유효성을 검증합니다.</p>
+<p><code>takeval.check</code> 함수를 호출하여 밸리데이션을 검증합니다.</p>
 <pre><code language="language-javascript" class="language-javascript">/*********************************************************
  * 2 필수 FUNCTION 영역
  ********************************************************/
@@ -1244,23 +1273,24 @@ this.fnInit = function()
 this.fnSearch = function(sTranId)
 {
   //공통 조회에서 호출할 디폴트값 세팅 필요
-  if (take.nvl(sTranId, &#34;&#34;)==&#34;&#34;) sTranId = &#34;userList&#34;;
+  if (take.isEmpty(sTranId)) sTranId = &#34;userList&#34;;
   
   switch(sTranId) {   
-    case &#34;userList&#34;:
+    case &#34;userList&#34; :
 
-      //유효성 검증
+      // 밸리데이션 검증
       if(!takeval.check(this, &#34;Search&#34;)) return;
 
-      //Dataset 비우기
-      this.dsList.clearData();
+      // 변수 선언
+      var objDivSearch, objDsList;
+      var sParam;
 
       ...중략...
   }
 };
 </code></pre>
 <h2 is-upgraded><strong>출력 예시</strong></h2>
-<p><code>사용여부</code>를 선택하지 않았을 때 유효성 검증을 실패합니다.<br> 그리고 사용자에게 안내 메시지가 출력되며 실패한 <code>Component</code>로 <code>Focus</code>가 이동합니다.</p>
+<p><code>사용여부</code>를 선택하지 않았을 때 밸리데이션 검증을 실패합니다.<br> 그리고 사용자에게 안내 메시지가 출력되며 실패한 <code>Component</code>로 <code>Focus</code>가 이동합니다.</p>
 <p class="image-container"><img alt="example" src="img\\dbf40a2c5398f571.png"></p>
 
 
@@ -1298,7 +1328,7 @@ this.fnSearch = function(sTranId)
 <li><strong>height</strong> : <code>21</code></li>
 <li><strong>right</strong> : <code>0</code></li>
 </ul>
-<p class="image-container"><img alt="divDetail3" src="img\\474a9537299fe214.png"></p>
+<p class="image-container"><img alt="divDetail3" src="img\\e909925bae6a92e.png"></p>
 
 
       </google-codelab-step>

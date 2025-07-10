@@ -3,23 +3,24 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2025-07-10T14:30:41+09:00",
-  "id": "how-to-write",
-  "duration": 7,
-  "title": "작성샘플",
+  "updated": "2025-07-10T14:36:13+09:00",
+  "id": "nexacro-99-plugin",
+  "duration": 5,
+  "title": "UXBooster Plugin 소개",
   "authors": "glorial",
-  "summary": "작성샘플",
-  "source": "how-to-write.md",
+  "summary": "UXBooster Plugin",
+  "source": "nexacro-99-plugin.md",
   "theme": "",
   "status": [
     "published"
   ],
   "category": [
-    "docs"
+    "uxbooster-nexacro"
   ],
   "tags": [
-    "docs"
+    "nexacro",
+    "uxbooster-nexacro"
   ],
   "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
-  "url": "how-to-write"
+  "url": "nexacro-99-plugin"
 }
