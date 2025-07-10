@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2025-07-10T15:14:26+09:00",
-  "id": "nexacro-99-plugin",
-  "duration": 5,
-  "title": "UXBooster Plugin 소개",
+  "updated": "2025-07-10T15:12:52+09:00",
+  "id": "nexacro-99-plugin-querytodto",
+  "duration": 10,
+  "title": "UXBooster Plugin DTO 생성",
   "authors": "glorial",
-  "summary": "UXBooster Plugin",
-  "source": "nexacro-99-plugin.md",
+  "summary": "UXBooster Plugin Query to DTO",
+  "source": "nexacro-99-plugin-querytodto.md",
   "theme": "",
   "status": [
     "published"
@@ -22,5 +22,5 @@
     "uxbooster-nexacro"
   ],
   "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
-  "url": "nexacro-99-plugin"
+  "url": "nexacro-99-plugin-querytodto"
 }
