@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-07-10T14:23:03+09:00",
+  "id": "nexacro-99-plugin-generator",
+  "duration": 0,
+  "title": "UXBooster Plugin 소스생성",
+  "authors": "glorial",
+  "summary": "UXBooster Plugin Generator",
+  "source": "nexacro-99-plugin-generator.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "uxbooster-nexacro"
+  ],
+  "tags": [
+    "nexacro",
+    "uxbooster-nexacro"
+  ],
+  "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
+  "url": "nexacro-99-plugin-generator"
+}
