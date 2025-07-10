@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-07-10T15:51:29+09:00",
+  "id": "react-99-plugin-generator",
+  "duration": 30,
+  "title": "UXBooster Plugin 소스생성",
+  "authors": "glorial",
+  "summary": "UXBooster Plugin Generator",
+  "source": "react-99-plugin-generator.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "uxbooster-react"
+  ],
+  "tags": [
+    "react",
+    "uxbooster-react"
+  ],
+  "feedback": "https://github.com/takeitcorp/takeitcorp.github.io/issues",
+  "url": "react-99-plugin-generator"
+}
