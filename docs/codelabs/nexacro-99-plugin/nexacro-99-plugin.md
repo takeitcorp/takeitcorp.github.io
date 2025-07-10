@@ -19,7 +19,7 @@ Duration: 0:01:00
 >  
 >   - Table 단위의 Controller, Service, DTO, Mapper 등의 소스를 생성합니다.
 >
->  **Query To DTO**  [사용법](../nexacro-99-plugin-generator/#0)
+>  **Query To DTO**  [사용법](../nexacro-99-plugin-querytodto/#0)
 >  
 >   - 사용자가 입력한 쿼리 결과를 바탕으로 DTO 소스를 생성합니다.
 

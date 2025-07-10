@@ -1,0 +1,107 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>UXBooster Plugin DTO 생성</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <link rel="stylesheet" href="/elements/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="nexacro-99-plugin-querytodto"
+                  title="UXBooster Plugin DTO 생성"
+                  environment="web"
+                  feedback-link="https://github.com/takeitcorp/takeitcorp.github.io/issues">
+    
+      <google-codelab-step label="Query to DTO" duration="1">
+        
+          <google-codelab-about codelab-title="UXBooster Plugin DTO 생성" authors="glorial" ></google-codelab-about>
+        
+        <p><code>UXBooster - Query to DTO</code> 를 선택합니다.</p>
+<p class="image-container"><img alt="그림 1" src="img\\df4f9c1325a8ffbf.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="데이터소스 관리" duration="2">
+        
+        <p><code>Query to DTO</code>를 실행하면 제일먼저 <strong>데이터소스 관리</strong> 화면이 나옵니다.</p>
+<p>생성할 소스의 대상이 될 Table이 저장된 DB의 접속정보를 관리 할 수 있습니다.</p>
+<ul>
+<li><strong>등록</strong> : 데이터소스 등록 팝업</li>
+<li><strong>수정</strong> : 선택한 데이터소스 수정 팝업</li>
+<li><strong>삭제</strong> : 선택한 데이터소스를 삭제</li>
+<li><strong>연결 테스트</strong> : 선택한 데이터소스의 연결 테스트 실행</li>
+</ul>
+<p class="image-container"><img alt="그림 3" src="img\\505f5ed54ac8109f.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="DB 연결 정보 입력" duration="5">
+        
+        <h2 is-upgraded>등록버튼 클릭</h2>
+<p><code>등록</code> 버튼을 클릭하여 새로운 데이터소스를 등록합니다.</p>
+<p class="image-container"><img alt="그림 4" src="img\\e8b52ab18694bfeb.png"></p>
+<h2 is-upgraded>DB 연결 정보 입력</h2>
+<p>DB 연결 정보를 입력합니다.</p>
+<p><code>연결 테스트</code> 버튼을 통해 입력된 정보를 검증할 수 있습니다.</p>
+<ul>
+<li><strong>ID</strong> : 사용할 데이터소스의 명칭으로 자유롭게 입력(중복방지)</li>
+<li><strong>Vendor</strong> : DB 종류</li>
+<li><strong>Library Path</strong> : 드라이버 파일의 경로(사용중인 DB에 맞는 드라이버를 선택)</li>
+<li><strong>Driver</strong> : 드라이버 파일에서 제공되는 클래스(Vendor 선택 시 자동입력)</li>
+<li><strong>Host</strong> : DB Server IP</li>
+<li><strong>Port</strong> : DB Server Port</li>
+<li><strong>Database</strong> : DatabaseName 또는 SID</li>
+<li><strong>Username</strong> : 접속계정</li>
+<li><strong>Password</strong> : 접속암호</li>
+</ul>
+<p class="image-container"><img alt="그림 5" src="img\\765ce8c9edf1b0fe.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="데이터소스 선택" duration="1">
+        
+        <p>사용할 데이터소스를 선택 후 <code>Next</code> 버튼을 클릭합니다.</p>
+<p class="image-container"><img alt="그림 3" src="img\\505f5ed54ac8109f.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="DTO 생성" duration="1">
+        
+        <p><code>SELECT</code> 쿼리를 입력 후 <code>쿼리실행</code> 버튼을 클릭합니다.</p>
+<p>조회된 컬럼 정보를 활용하여 DTO가 생성됩니다.</p>
+<p class="image-container"><img alt="그림 6" src="img\\df9f02c622258f05.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="/elements/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
