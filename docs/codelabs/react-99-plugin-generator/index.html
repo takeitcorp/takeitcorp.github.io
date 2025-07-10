@@ -1,0 +1,268 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>UXBooster Plugin 소스생성</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <link rel="stylesheet" href="/elements/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="react-99-plugin-generator"
+                  title="UXBooster Plugin 소스생성"
+                  environment="web"
+                  feedback-link="https://github.com/takeitcorp/takeitcorp.github.io/issues">
+    
+      <google-codelab-step label="Generator" duration="1">
+        
+          <google-codelab-about codelab-title="UXBooster Plugin 소스생성" authors="glorial" ></google-codelab-about>
+        
+        <p><code>UXBooster - Generator</code> 를 선택합니다.</p>
+<p class="image-container"><img alt="그림 1" src="img\\a5457c45a2049846.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="데이터소스 관리" duration="2">
+        
+        <p><code>Generator</code>를 실행하면 제일먼저 <strong>데이터소스 관리</strong> 화면이 나옵니다.</p>
+<p>생성할 소스의 대상이 될 Table이 저장된 DB의 접속정보를 관리 할 수 있습니다.</p>
+<ul>
+<li><strong>등록</strong> : 데이터소스 등록 팝업</li>
+<li><strong>수정</strong> : 선택한 데이터소스 수정 팝업</li>
+<li><strong>삭제</strong> : 선택한 데이터소스를 삭제</li>
+<li><strong>연결 테스트</strong> : 선택한 데이터소스의 연결 테스트 실행</li>
+</ul>
+<p class="image-container"><img alt="그림 2" src="img\\beabc5e203446ed8.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="DB 연결 정보 입력" duration="5">
+        
+        <h2 is-upgraded>등록버튼 클릭</h2>
+<p><code>등록</code> 버튼을 클릭하여 새로운 데이터소스를 등록합니다.</p>
+<p class="image-container"><img alt="그림 2" src="img\\beabc5e203446ed8.png"></p>
+<h2 is-upgraded>DB 연결 정보 입력</h2>
+<p>DB 연결 정보를 입력합니다.</p>
+<p><code>연결 테스트</code> 버튼을 통해 입력된 정보를 검증할 수 있습니다.</p>
+<ul>
+<li><strong>ID</strong> : 사용할 데이터소스의 명칭으로 자유롭게 입력(중복방지)</li>
+<li><strong>Vendor</strong> : DB 종류</li>
+<li><strong>Library Path</strong> : 드라이버 파일의 경로(사용중인 DB에 맞는 드라이버를 선택)</li>
+<li><strong>Driver</strong> : 드라이버 파일에서 제공되는 클래스(Vendor 선택 시 자동입력)</li>
+<li><strong>Host</strong> : DB Server IP</li>
+<li><strong>Port</strong> : DB Server Port</li>
+<li><strong>Database</strong> : DatabaseName 또는 SID</li>
+<li><strong>Username</strong> : 접속계정</li>
+<li><strong>Password</strong> : 접속암호</li>
+</ul>
+<p class="image-container"><img alt="그림 4" src="img\\31f749bf38be71f5.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="데이터소스 선택" duration="1">
+        
+        <p>사용할 데이터소스를 선택 후 <code>Next</code> 버튼을 클릭합니다.</p>
+<p class="image-container"><img alt="그림 5" src="img\\8a3928d87741eea5.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="데이터베이스(스키마) 선택" duration="1">
+        
+        <p>Table이 속한 데이터베이스 또는 스키마를 선택합니다.</p>
+<p class="image-container"><img alt="그림 6" src="img\\3cc79fbdaeb9d22d.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="테이블 조회" duration="3">
+        
+        <p>데이터베이스(스키마)를 선택하면 좌측에 테이블 목록이 표시됩니다.</p>
+<p>테이블을 선택하면 우측상단에 컬럼정보, 우측하단에 데이터(최대 5건)이 표시됩니다.</p>
+<p class="image-container"><img alt="그림 7" src="img\\284397f62f362a0b.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="테이블 선택" duration="1">
+        
+        <p>생성할 테이블을 선택하고 <code>Next</code> 버튼을 클릭합니다.</p>
+<p class="image-container"><img alt="그림 8" src="img\\a0fc07398c175d71.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="템플릿 관리" duration="5">
+        
+        <p>테이블을 선택하면 템플릿을 관리하는 화면이 표시됩니다.</p>
+<ul>
+<li><strong>등록</strong> : 템플릿 등록 팝업</li>
+<li><strong>수정</strong> : 선택한 템플릿 수정 팝업</li>
+<li><strong>삭제</strong> : 선택한 템플릿을 삭제</li>
+</ul>
+<p class="image-container"><img alt="그림 9" src="img\\77849cbb376afbf1.png"></p>
+<h2 is-upgraded>기본 템플릿 제공</h2>
+<p>UXBooster Framework 패턴의 <code>Nexacro</code>, <code>React</code> 템플릿을 기본제공합니다.</p>
+<ul>
+<li><strong>Nexacro용 템플릿</strong><ul>
+<li>Controller</li>
+<li>Service</li>
+<li>Mapper</li>
+</ul>
+</li>
+<li><strong>React용 템플릿</strong><ul>
+<li>Controller</li>
+<li>Service</li>
+<li>Mapper</li>
+<li>InfoDTO</li>
+<li>SearchDTO</li>
+</ul>
+</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="템플릿 등록" duration="10">
+        
+        <h2 is-upgraded>등록버튼 클릭</h2>
+<p><code>등록</code> 버튼을 클릭하여 새로운 템플릿을 등록합니다.</p>
+<p class="image-container"><img alt="그림 9" src="img\\77849cbb376afbf1.png"></p>
+<h2 is-upgraded>템플릿 정보 입력</h2>
+<p>템플릿 정보를 입력합니다.</p>
+<ul>
+<li><strong>템플릿명</strong> : 사용할 템플릿의 명칭으로 자유롭게 입력(중복방지)</li>
+<li><strong>템플릿 경로</strong> : <code>Apache FreeMarker</code> 문법으로 작성된 <code>uxbt</code> 확장자 파일</li>
+<li><strong>파일명(접두어)</strong> : 생성될 파일의 접두어(접두어, 접미어 중 하나만 입력 가능)</li>
+<li><strong>파일명(접미어)</strong> : 생성될 파일의 접미어(접두어, 접미어 중 하나만 입력 가능)</li>
+<li><strong>확장자</strong> : 생성될 파일의 확장자</li>
+<li><strong>루트경로</strong> : 생성될 파일의 클래스패스</li>
+<li><strong>패키지(상위)</strong> : 생성될 파일의 상위 패키지 경로(상위, 하위 중 하나만 입력 가능)</li>
+<li><strong>패키지(하위)</strong> : 생성될 파일의 하위 패키지 경로(상위, 하위 중 하나만 입력 가능)</li>
+<li><strong>사용여부</strong> : 사용여부가 <code>Y</code>인 템플릿만 소스 생성 시 사용</li>
+</ul>
+<p class="image-container"><img alt="그림 10" src="img\\5e3d40fa23aeb092.png"></p>
+<h2 is-upgraded>템플릿 작성</h2>
+<p><strong>템플릿 파일 작성</strong> 시 <code>UXBooster Plugin</code>의 변수를 활용할 수 있습니다.</p>
+<p>기본 문법은 <a href="https://freemarker.apache.org/index.html" target="_blank"><code>공식사이트</code></a>를 참조해 주시기 바랍니다.</p>
+<aside class="warning"><p><strong>템플릿 변수</strong></p>
+<p>사용된 템플릿의 정보를 바탕으로 선언된 변수</p>
+<ul>
+<li><strong>rootPath : </strong><code>루트경로</code><pre><code>변환예시 : src/main/java
+</code></pre>
+</li>
+<li><strong>rootPackage</strong> : <code>패키지(상위)</code><pre><code>변환예시 : kr.co.takeit.sample
+</code></pre>
+</li>
+<li><strong>sourcePackage</strong> : <code>패키지(하위)</code><pre><code>변환예시 : controller
+</code></pre>
+</li>
+<li><strong>fileName</strong> : <code>파일명(접두어)</code> + <code>(Pascal)Table명</code> + <code>파일명(접미어)</code><pre><code>변환예시 : GenTbSmp01Controller
+</code></pre>
+</li>
+<li><strong>fileExtName</strong> : <code>확장자</code><pre><code>변환예시 : java
+</code></pre>
+</li>
+<li><strong>fileFullName</strong> : <code>${fileName}</code>.<code>{fileExtName}</code><pre><code>변환예시 : GenTbSmp01Controller.java
+</code></pre>
+</li>
+</ul>
+</aside>
+<aside class="warning"><p><strong>런타임 변수</strong></p>
+<p>선택된 테이블, 템플릿 정보를 바탕으로 조합 또는 생성된 변수</p>
+<ul>
+<li><strong>today</strong> : <code>현재날짜</code><pre><code>변환예시 : 2025.07.10
+</code></pre>
+</li>
+<li><strong>fullPackage</strong> : <code>${rootPackage}</code>.<code>${sourcePackage}</code> 또는 <code>${rootPackage}</code><br><em>패키지선언부, 파일생성경로로 사용</em><pre><code>변환예시 : kr.co.takeit.sample.controller
+</code></pre>
+</li>
+<li><strong>originName</strong> : <code>Table명</code><pre><code>변환예시 : TB_SMP01
+</code></pre>
+</li>
+<li><strong>domainName</strong> : <code>(소문자화, 언더바제거)Table명</code><pre><code>변환예시 : tbsmp01
+</code></pre>
+</li>
+<li><strong>entityName</strong> : <code>(Pascal)Table명</code><pre><code>변환예시 : TbSmp01
+</code></pre>
+</li>
+<li><strong>propertyName</strong> : <code>(Camel)Table명</code><pre><code>변환예시 : tbSmp01
+</code></pre>
+</li>
+<li><strong>fileRemark</strong> : <code>Table설명</code><pre><code>변환예시 : 샘플01
+</code></pre>
+</li>
+<li><strong>serialVersionUID</strong> : <code>Serializable 클래스의 UID</code><pre><code>변환예시 : 6327862526388102761L
+</code></pre>
+</li>
+<li><strong>columnList</strong> : <code>하단 컬럼 변수 참조</code></li>
+</ul>
+</aside>
+<aside class="warning"><p><strong>컬럼 변수</strong></p>
+<ul>
+<li><strong>name</strong> : <code>컬럼명</code><pre><code>변환예시 : USER_CD
+</code></pre>
+</li>
+<li><strong>camelName</strong> : <code>(Camel)컬럼명</code><pre><code>변환예시 : userCd
+</code></pre>
+</li>
+<li><strong>pascalName</strong> : <code>(Pascal)컬럼명</code><pre><code>변환예시 : UserCd
+</code></pre>
+</li>
+<li><strong>comment</strong> : <code>컬럼설명</code><pre><code>변환예시 : 사용자코드
+</code></pre>
+</li>
+<li><strong>pk</strong> : <code>PK 여부</code><pre><code>변환예시 : true
+</code></pre>
+</li>
+<li><strong>dataType</strong> : <code>SQL Data Type</code><pre><code>변환예시 : 2005
+</code></pre>
+</li>
+<li><strong>javaTypeName</strong> : <code>(SQL Data Type과 대응 될) Java Type 클래스명</code><pre><code>변환예시 : BigDecimal
+</code></pre>
+</li>
+</ul>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="소스 생성" duration="1">
+        
+        <p>소스 생성에 사용할 템플릿을 선택 후 <code>Create</code> 버튼을 클릭합니다.</p>
+<p class="image-container"><img alt="그림 9" src="img\\77849cbb376afbf1.png"></p>
+<p>다음처럼 소스 생성이 완료됩니다.</p>
+<p class="image-container"><img alt="그림 10" src="img\\8ecd4574b053a7ef.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="/elements/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
