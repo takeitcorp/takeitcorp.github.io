@@ -8,3 +8,4 @@ call gulp dist --codelabs-dir=../documents --base-url=https://takeitcorp.github.
 xcopy /e /i /y dist ..\docs
 del ..\docs\codelabs\*.bat
 cd ..
+xcopy /e /i /y download docs\download
