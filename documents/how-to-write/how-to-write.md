@@ -62,6 +62,33 @@ Valid until: Tuesday, January 19, 2038
 >
 >  Note: Your snappy text would go here.
 
+#### 복합  
+> aside negative
+> 
+> **rootPath :** 루트경로
+>  
+>     변환예 : src/main/java
+>  
+>  
+> **rootPackage** : 패키지(상위)
+>  
+>     	변환예시 : kr.co.takeit.sample
+>  
+> 
+
+#### 복합2
+
+> aside negative
+> 
+> **템플릿 변수**
+> 
+> 사용된 템플릿의 정보를 바탕으로 선언된 변수
+> 
+> - **rootPath :** `루트경로`
+>  
+>     	변환예시 : src/main/java
+>  
+
 
 ## 좁은리스트
 Duration: 0:04:00
@@ -114,7 +141,15 @@ I love supporting the **[EFF](https://eff.org)**.
 
 This is the *[Markdown Guide](https://www.markdownguide.org)*.
 
-See the section on [`code`](#좁은리스트).
+See the section on [`좁은리스트 by Link`](#-좁은리스트). 잘 안됨(아래 링크를 한번 갔다 오면 또 잘 됨)
+
+See the section on [`좁은리스트 by Number`](#2)
+
+[`다른문서`](../nexacro-02-install)
+
+[`다른문서 9단계`](../nexacro-02-install/#8)
+
+[`다른문서 9단계`](../nexacro-02-install/index.html?index=..%2F..index#8)
 
 
 ## 이미지, 동영상
@@ -156,3 +191,18 @@ Column A | Column B | Column C
 | List        | Here's a list! <ul><li>Item one.</li><li>Item two.</li></ul> |
 
 
+
+### **Headless**
+
+| <span>      |             |
+| ----------- | ----------- |
+| Header      | Title |
+| List        | Here's a list! <ul><li>Item one.</li><li>Item two.</li></ul> |
+
+
+### 테이블 들여쓰기
+- 테이블 들여쓰기
+  |TB_SMP01|샘플01|||||
+  ---|---|---|---|---|---
+  USER_CD|사용자코드|Y|Y|VARCHAR2|10
+  USER_ID|사용자ID|N|N|VARCHAR2|18
