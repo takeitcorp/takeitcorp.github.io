@@ -31,7 +31,9 @@ Duration: 0:01:00
 #### 지원 DBMS
 * **Oracle**, **SQLServer**, **MySQL**, **MariaDB**, **PostgreSQL**, **Tibero**
 
+### 플러그인 다운로드
 
+<button>[UXBooster Plugin Download](/download/kr.co.takeit.uxbooster.ide_1.0.0.jar)</button>
 
 ------------------------------------------------------------------------------------------------------------
 
