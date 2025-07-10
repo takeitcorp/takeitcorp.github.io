@@ -35,6 +35,9 @@ gulp 배포 준비
 
         site\app\images\icons\{category}.svg
 
+이미지
+        600*400 크기가 적당함
+
 로컬 배포준비
         build.bat 실행
         git pull
